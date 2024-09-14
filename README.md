@@ -9,8 +9,9 @@ Our Discord server can be found here:
 # Current stage
 Tools: Lineux in action!  
 
-https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
-
-Klipper: None yet
+Klipper: Alpha
 
 # Test videos
+
+https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
+
