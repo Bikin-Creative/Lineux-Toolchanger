@@ -9,7 +9,7 @@ Our Discord server can be found here:
 # Current stage
 Tools: Lineux in action!  
 
-Klipper: Alpha
+Klipper: Beta. Multi-tool printing fully working.
 
 # Test videos
 
