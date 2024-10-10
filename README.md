@@ -23,4 +23,4 @@ Klipper: Beta. Multi-tool printing fully working.
 
 https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
-https://youtu.be/U8tMA8A3mtE?si=fzW57cnbvKQGMyPY
+https://www.youtube.com/watch?v=U8tMA8A3mtE&t=1s
