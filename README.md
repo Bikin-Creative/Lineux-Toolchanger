@@ -6,6 +6,14 @@ Our Discord server can be found here:
 
 [![Discord Banner 2](https://discord.com/api/guilds/1266260887249879122/widget.png?style=banner2)](https://discord.gg/Xwqbjj4VjH)
 
+# Description
+Lineux Toolchanger consist of a suite of 3 parts:
+1. Lineux - The hardware consisting of the Carriage, Toolhead and Dock
+2. Btc - The macros handling the toolchange
+3. Dockswipe - Stowable dock to maximise print build
+
+All 3 parts can be used with other systems. Example, Lineux can be used with other toolchanger plugin. Other toolchanger hardware can use Btc macros. Etc...
+
 # Current stage
 Tools: Lineux in action!  
 
@@ -15,3 +23,4 @@ Klipper: Beta. Multi-tool printing fully working.
 
 https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
+https://youtu.be/U8tMA8A3mtE?si=fzW57cnbvKQGMyPY

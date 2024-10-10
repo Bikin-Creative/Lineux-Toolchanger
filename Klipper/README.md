@@ -9,8 +9,7 @@ Btc provided macros to utilize the tool for nozzle alignment. Instructions for u
 # Macro Status
 Beta. Multi-tool printing currently fully working.
 TODO:
-1. LED Status
-2. Crash Detection
+1. Crash Detection
 
 # Instructions
 Coming soon. The files contain comments that you may follow. Or ask in discord.
