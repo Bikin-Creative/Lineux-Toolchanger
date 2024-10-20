@@ -14,7 +14,7 @@ Current carriage is for VZBot. You may need to adapt the carriage to suit yr pri
 Toolheads are a modded Dragonburner based on [chirpy2605](https://github.com/chirpy2605/voron).
 
 # Docks
-Inspired by Daksh Toolchanger [ankurv2k6]([https://github.com/ankurv2k6/daksh-toolchanger-v2])
+Inspired by Daksh Toolchanger [ankurv2k6](https://github.com/ankurv2k6/daksh-toolchanger-v2)
 
 # Requirement
 1. Carriage
