@@ -11,7 +11,7 @@ Pls do a test print on a small part for fitting and tolerance measurement before
 Current carriage is for VZBot. You may need to adapt the carriage to suit yr printer
 
 # Toolhead
-Toolheads are a modded Dragonburner based on [chirpy2605]([https://github.com/chirpy2605/voron]).
+Toolheads are a modded Dragonburner based on [chirpy2605](https://github.com/chirpy2605/voron).
 
 # Docks
 Inspired by Daksh Toolchanger [ankurv2k6]([https://github.com/ankurv2k6/daksh-toolchanger-v2])
