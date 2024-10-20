@@ -1,5 +1,5 @@
 # Overview
-Lineux Toolchanger is officially released and working.
+Lineux Toolchanger is officially released and working
 All cads released are based on a Vzbot 330. You will need to adapt the dock and carriage to yr own printers.
 Designs, mechanism and bom might changed as we progress. Do take note.
 Inspired by Axial Flux toolchanger [jera-sea](https://github.com/jera-sea/MagSwitch-Toolchanger).
