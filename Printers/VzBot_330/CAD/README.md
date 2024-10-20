@@ -7,18 +7,24 @@ Designs, mechanism and bom might changed as we progress. Do take note.
 
 Inspired by Axial Flux toolchanger [jera-sea](https://github.com/jera-sea/MagSwitch-Toolchanger).
 
+
 # Parts preparing
 Ensure the printed parts are printed without any warping to ensure proper and perfectly aligned components during installation.
+
 Pls do a test print on a small part for fitting and tolerance measurement before commiting to the full printed parts.
+
 
 # Carriage
 Current carriage is for VZBot. You may need to adapt the carriage to suit yr printer
 
+
 # Toolhead
 Toolheads are a modded Dragonburner based on [chirpy2605](https://github.com/chirpy2605/voron).
 
+
 # Docks
 Inspired by Daksh Toolchanger [ankurv2k6](https://github.com/ankurv2k6/daksh-toolchanger-v2)
+
 
 # Requirement
 1. Carriage
