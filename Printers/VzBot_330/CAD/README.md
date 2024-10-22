@@ -28,7 +28,7 @@ Inspired by Daksh Toolchanger [ankurv2k6](https://github.com/ankurv2k6/daksh-too
 
 # Requirement
 1. Carriage
-2. Toolheads (Quantity depends on how many you require or may fit on yr printer. Minimum of 2 toolheads required
+2. Toolheads (Quantity depends on how many you require or may fit on yr printer. Minimum of 2 toolheads required)
 3. Docks (1 dock per toolhead required)
 4. Nudge (Required for tool nozzle offset calibration)
 
