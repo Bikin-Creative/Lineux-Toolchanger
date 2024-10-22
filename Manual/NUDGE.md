@@ -22,7 +22,7 @@ Save and restart firmware.
 
 Home All
 
-Z Tile/Quad Gantry
+Z Tilt/Quad Gantry
 
 Home Z
 
