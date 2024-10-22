@@ -32,3 +32,14 @@ NUDGE_FIND_TOOL_OFFSETS
 
 When done, retrieve all tools offsets from console as describe below:
 
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/nudge_result.jpg)
+
+```
+Calculated offsets for this tool:
+Z: -1.65
+X: -0.48
+Y: 0.45
+--- End Tool Offset Calibration ---
+```
+
+By using the numbers above, edit `tool_x.cfg` and enter these offsets. Scroll thru the console to get offsets for all tools.
