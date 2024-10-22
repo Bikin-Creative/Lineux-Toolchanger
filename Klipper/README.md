@@ -4,7 +4,7 @@ Bikin Toolchanger is using pure macros. It uses snippets of codes from the [Mags
 
 # Nudge Tool
 Nudge tool was created by [zruncho](https://github.com/zruncho3d/nudge). It provides a very accurate and convenient way to align nozzles for toolchangers.
-Btc provided macros to utilize the tool for nozzle alignment. Instructions for use are coming, but you may follow instructions from zruncho's github.
+Btc provided macros to utilize the tool for nozzle alignment. Instructions for use are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Manual/NUDGE.md).
 
 # Macro Status
 Beta. Multi-tool printing currently fully working.
@@ -12,7 +12,7 @@ TODO:
 1. Crash Detection
 
 # Instructions
-Coming soon. The files contain comments that you may follow. Or ask in discord.
+Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Manual/KLIPPER.md)
 
 # Files
 1. btc.cfg <- Main file, required

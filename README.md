@@ -19,6 +19,9 @@ Tools: Lineux in action!
 
 Klipper: Beta. Multi-tool printing fully working.
 
+# Instructions
+Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
+
 # Test videos
 
 https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
