@@ -14,7 +14,7 @@ release_gcode:
 [gcode_macro _nudge_variables]
 variable_nudge_resolution: 0.05      # Resolution should be between 0.01 - 0.1
 variable_nudge_travel_speed: 100
-# resolution must be between 0.01 - 0.1
+# resolution must be between 0.01 - 0.1. Probing will be very very slow at highest resolution of 0.01. For faster probing, use lower resolution of 0.1.
 # travel_speed, set at your usual travel speed
 ```
 
