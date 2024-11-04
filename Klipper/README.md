@@ -7,7 +7,7 @@ Nudge tool was created by [zruncho](https://github.com/zruncho3d/nudge). It prov
 Btc provided macros to utilize the tool for nozzle alignment. Instructions for use are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Manual/NUDGE.md).
 
 # Macro Status
-Beta. Multi-tool printing currently fully working.
+Fully tested and working. Released.
 TODO:
 1. Crash Detection
 

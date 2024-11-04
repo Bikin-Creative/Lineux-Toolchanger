@@ -15,9 +15,9 @@ Lineux Toolchanger consist of a suite of 3 parts:
 All 3 parts can be used with other systems. Example, Lineux can be used with other toolchanger plugin. Other toolchanger hardware can use Btc macros. Etc...
 
 # Current stage
-Tools: Lineux in action!  
-
-Klipper: Beta. Multi-tool printing fully working.
+Lineux: Released
+BTC: Released
+Dockswipe: Design stage
 
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
@@ -27,3 +27,15 @@ Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchan
 https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
 https://www.youtube.com/watch?v=U8tMA8A3mtE&t=1s
+
+https://youtu.be/xHsFxVthdLM?si=bTcKz5V0HF7okz2N
+
+# Prints
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20241028_141906_488.jpg)
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20241026_220624_252.jpg)
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
