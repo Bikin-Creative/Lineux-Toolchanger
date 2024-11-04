@@ -16,7 +16,9 @@ All 3 parts can be used with other systems. Example, Lineux can be used with oth
 
 # Current stage
 Lineux: Released
+
 BTC: Released
+
 Dockswipe: Design stage
 
 # Instructions
@@ -38,4 +40,6 @@ https://youtu.be/xHsFxVthdLM?si=bTcKz5V0HF7okz2N
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
+# Printers
+This project was developed on a Vzbot 330. Other printers would need slight modifications. We could add support for other printers when there are others who had modded successfully, or when
+we are able to get a hold of other printers to mod.

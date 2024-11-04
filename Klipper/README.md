@@ -8,6 +8,7 @@ Btc provided macros to utilize the tool for nozzle alignment. Instructions for u
 
 # Macro Status
 Fully tested and working. Released.
+
 TODO:
 1. Crash Detection
 
