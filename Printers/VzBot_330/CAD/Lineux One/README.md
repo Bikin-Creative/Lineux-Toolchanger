@@ -20,6 +20,7 @@ Current carriage is for VZBot. You may need to adapt the carriage to suit yr pri
 
 # Toolhead
 Toolheads doesn't have any part cooling fan. You will only need 1 5015 part cooling fan on the carriage instead.
+The part cooling duct is fixed height, therfore you will need to have the same height hotends across all toolheads. 
 
 
 # Docks
