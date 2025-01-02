@@ -21,10 +21,16 @@ BTC: Released
 
 Dockswipe: Design stage
 
+Dockswipe project was kindly supported by [Blurolls](https://www.blurolls3d.com)
+
+Blurolls had also made kit available for Lineux
+
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
 
 # Test videos
+
+https://raw.githubusercontent.com/Bikin-Creative/Lineux-Toolchanger/main/images/VID-20250102-WA0013.mp4
 
 https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
