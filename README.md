@@ -10,7 +10,7 @@ Our Discord server can be found here:
 Lineux Toolchanger consist of a suite of 3 parts:
 1. Lineux - The hardware consisting of the Carriage, Toolhead and Dock
 2. Btc - The macros handling the toolchange
-3. Dockswipe - Stowable dock to maximise print build
+3. Dockslide - Stowable dock to maximise print build
 
 All 3 parts can be used with other systems. Example, Lineux can be used with other toolchanger plugin. Other toolchanger hardware can use Btc macros. Etc...
 
@@ -19,9 +19,9 @@ Lineux: Released
 
 BTC: Released
 
-Dockswipe: Design stage
+Dockslide: Design stage
 
-Dockswipe project was kindly supported by [Blurolls](https://www.blurolls3d.com)
+Dockslide project was kindly supported by [Blurolls](https://www.blurolls3d.com)
 
 Blurolls had also made kit available for Lineux
 
