@@ -15,6 +15,11 @@ Lineux Toolchanger consist of a suite of 3 parts:
 All 3 parts can be used with other systems. Example, Lineux can be used with other toolchanger plugin. Other toolchanger hardware can use Btc macros. Etc...
 
 # Current stage
+BOM is [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/BOM)
+
+Configurator is [here](https://www.myperniagaan.com/lineux)
+
+# Current stage
 Lineux: Released
 
 BTC: Released
