@@ -1,5 +1,5 @@
 # Dockslide
-Dockslide is an optional addon to recover back any build volume loss encoutered when having a fixed dock location on the existing printer.
+Dockslide is an optional addon to recover back any build volume loss encountered when having a fixed dock location on the existing printer.
 
 # Thanks to Peter from Blurolls for providing the parts and components for the development of Dockslide
 
