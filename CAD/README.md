@@ -10,3 +10,5 @@ Current Rails - 2 x mgn 9H 250mm
 2 x shaft collar bore5mm
 
 Pls do not hesitate to ask any questions regarding the Dockslide on our discord channel.
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/DockSlide.png)
