@@ -1,19 +1,19 @@
 # Overview
 
-There are 2 toolheads currently available:
+There are 2 toolhead systems currently available:
 
 - Lineux_DB - based on Dragonburner with partcooling fan embedded into the toolhead
 - Lineux One - Is a lighter, smaller toolhead. The partcooling fan is mounted on the carriage and is shared across all toolheads.
 
-Note: the toolheads use different carriage systems and are not compatible with each other.
+*Note:* the toolheads use different carriage systems and are not compatible with each other. 
 
 
 ## Lineux One
 Lineux One is officially released and working.
 
-All cads released are based on a Vzbot 330. You will need to adapt the dock and carriage to yr own printers.
+All cads released are based on a Vzbot 330 and expect a top mounted linear rail on X gantry and front/back belt routing. You might need to adapt the dock and carriage to yr own printers (Voron_2.4 and Trident are supported). 
 
-Designs, mechanism and bom might changed as we progress. Do take note.
+Designs, mechanism and bom do get updated as we progress. Do take note.
 
 Inspired by Axial Flux toolchanger [jera-sea](https://github.com/jera-sea/MagSwitch-Toolchanger).
 
@@ -23,18 +23,14 @@ Ensure the printed parts are printed without any warping to ensure proper and pe
 
 It is recommended to do a test print on a small part for fitting and tolerance measurement before commiting to the full printed parts.
 
-Recommended settings are as follows:
+Recommended slicer settings are as follows (Props to Voron team):
 ```
-First layer height: 0.25mm (This is required. Our parts have been designed for this.)
 Layer height: 0.2mm
 Extrusion width: 0.4mm, forced
 Infill pecentage: 40%
 Infill type: Adaptive Cubic, grid, gyroid, honeycomb, triangle, or cubic
 Wall count: 4
 Solid top/bottom layers: 5
-Seam placement: REAR
-This is important as we have seam relieve features that line up with the seam placement.
-Supports: NONE
 ```
 
 # Carriage
