@@ -33,3 +33,17 @@ Inspired by Daksh Toolchanger [ankurv2k6](https://github.com/ankurv2k6/daksh-too
 4. Nudge (Required for tool nozzle offset calibration)
 
 Join our [Discord](https://discord.gg/Xwqbjj4VjH) for any questions u may have. Let's go...
+
+
+# Gallery
+
+<p align="center">
+  <img src="images/LineuxDBCarriagev36-front.png?raw=true" width="400" />
+  <img src="images/LineuxDBCarriagev36-back.png?raw=true" width="400"/>
+  <img src="images/LineuxDBCarriagev36-bottom?raw=true" width="400"/>
+</p>
+
+<p align="center">
+  <img src="images/LineuxDBCarriagev36-explodedfront.png?raw=true" width="1000" />
+</p>
+
