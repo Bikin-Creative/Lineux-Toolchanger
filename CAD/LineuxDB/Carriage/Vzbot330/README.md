@@ -40,7 +40,7 @@ Join our [Discord](https://discord.gg/Xwqbjj4VjH) for any questions u may have. 
 <p align="center">
   <img src="images/LineuxDBCarriagev36-front.png?raw=true" width="400" />
   <img src="images/LineuxDBCarriagev36-back.png?raw=true" width="400"/>
-  <img src="images/LineuxDBCarriagev36-bottom?raw=true" width="400"/>
+  <img src="images/LineuxDBCarriagev36-bottom.png?raw=true" width="400"/>
 </p>
 
 <p align="center">

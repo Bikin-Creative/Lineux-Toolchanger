@@ -1,4 +1,4 @@
-#LineuxDB Toolhead
+# LineuxDB Toolhead
 
 The toolhead is based on Voron DragonBurner.
 
