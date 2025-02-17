@@ -19,16 +19,16 @@ BOM is [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/BOM
 
 Configurator is [here](https://www.myperniagaan.com/lineux)
 
+Generated file can easily be forwarded to your favourite supplier
+
 # Current stage
 Lineux: Released
 
 BTC: Released
 
-Dockslide: Design stage
+Dockslide: Released
 
 Dockslide project was kindly supported by [Blurolls](https://www.blurolls3d.com)
-
-Blurolls had also made kit available for Lineux
 
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
