@@ -24,3 +24,6 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 6. btc_klicky <- Required if using klicky probe
 7. btc_extras <- Sample macros to use in start/end print
 8. leds_x.cfg <- Required if using led effect
+
+Video guide
+https://youtu.be/iZIkt7Dj_W4?si=Rf-R7c0cukKf69sI
