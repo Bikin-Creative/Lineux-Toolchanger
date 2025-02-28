@@ -23,6 +23,7 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 5. btc_nudge.cfg <- Macros for nudge tool, required during set up
 6. btc_extras <- Sample macros to use in start/end print
 7. leds_x.cfg <- Required if using led effect
+8. dockslide.cfg <- Required if using dockslide
 
 
 # Video guide
