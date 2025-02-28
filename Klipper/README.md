@@ -21,9 +21,8 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 3. tool_x.cfg <- Individual tool settings, required
 4. bashed_macros.cfg <- For stress testing of toolchanger, required after set up
 5. btc_nudge.cfg <- Macros for nudge tool, required during set up
-6. btc_klicky <- Required if using klicky probe
-7. btc_extras <- Sample macros to use in start/end print
-8. leds_x.cfg <- Required if using led effect
+6. btc_extras <- Sample macros to use in start/end print
+7. leds_x.cfg <- Required if using led effect
 
 
 # Video guide
