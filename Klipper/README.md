@@ -25,6 +25,7 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 7. btc_extras <- Sample macros to use in start/end print
 8. leds_x.cfg <- Required if using led effect
 
-Video guide
+
+# Video guide
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iZIkt7Dj_W4/0.jpg)](https://www.youtube.com/watch?v=iZIkt7Dj_W4)
