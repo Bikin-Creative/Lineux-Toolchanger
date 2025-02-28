@@ -20,7 +20,7 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 2. btc_variables.cfg <- Variables, required
 3. tool_x.cfg <- Individual tool settings, required
 4. bashed_macros.cfg <- For stress testing of toolchanger, required after set up
-5. btc_nudge.cfg <- Macros for nudge tool, required during set up
+5. btc_nudge.cfg <- Macros for nudge tool, required during nozzle offset calibration set up
 6. btc_extras <- Sample macros to use in start/end print
 7. leds_x.cfg <- Required if using led effect
 8. dockslide.cfg <- Required if using dockslide
