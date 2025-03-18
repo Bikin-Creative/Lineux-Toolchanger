@@ -46,4 +46,4 @@ By using the numbers above, edit `tool_x.cfg` and enter these offsets. Scroll th
 
 # Video guide
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0_R_rUG1s-4&t=8s/0.jpg)](https://www.youtube.com/watch?v=0_R_rUG1s-4&t=8s)
+[![IMAGE ALT TEXT HERE](https://github.com/user-attachments/assets/b954c806-07a7-4ab1-90d6-41dfc59337b0)](https://www.youtube.com/watch?v=0_R_rUG1s-4&t=8s)
