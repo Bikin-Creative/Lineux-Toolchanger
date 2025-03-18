@@ -43,3 +43,7 @@ Y: 0.45
 ```
 
 By using the numbers above, edit `tool_x.cfg` and enter these offsets. Scroll thru the console to get offsets for all tools.
+
+# Video guide
+
+(https://www.youtube.com/watch?v=iZIkt7Dj_W4)
