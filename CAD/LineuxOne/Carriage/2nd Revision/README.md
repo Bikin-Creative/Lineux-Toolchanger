@@ -7,4 +7,4 @@
 - Compatible with 1st release toolhead and dock.
 
 
-(*Take note - Carriage Body B will require printing support for the slider dowel section.)
+(Take note - Carriage Body B will require printing support for the slider dowel section.)
