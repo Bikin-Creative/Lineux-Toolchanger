@@ -35,14 +35,14 @@ Solid top/bottom layers: 5
 Refer to the printer carriage available or check under usermods section. Pls do check in discord as well.
 
 # Toolhead
-Toolheads doesn't have any part cooling fan. You will only need 1 5015 part cooling fan on the carriage instead.
-The part cooling duct is fixed height, therfore you will need to have the same height hotends across all toolheads. 
+Lineux One Toolheads doesn't have any part cooling fan. You will only need 1 5015 part cooling fan on the carriage instead.
+The part cooling duct is fixed height, therefore you will need to have the same height hotends across all toolheads. 
 
 # Docks
 Inspired by Daksh Toolchanger [ankurv2k6](https://github.com/ankurv2k6/daksh-toolchanger-v2)
 
 # Dockslide
-Dockslide is an optional addon to recover back any build volume loss encountered when having a fixed dock location on the existing printer.
+Dockslide is an optional addon to recover back any build volume loss encountered when having a fixed dock on the existing printer.
 
 # Requirement
 1. Carriage
