@@ -1,6 +1,5 @@
-# Voron 2.4 Carriage
-Contributed by art_v2.5091_sc0018|LNX.2
+# 1st Release 21 Aug 2024
 
 
-# Voron Trident
-The carriage is a concept and untested. Do take note
+# 2nd Revision 24 Mar 2025
+
