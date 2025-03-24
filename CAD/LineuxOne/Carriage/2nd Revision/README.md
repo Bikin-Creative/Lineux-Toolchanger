@@ -5,3 +5,6 @@
 - Openbuild Spacer replacing hex nuts for stablility
 - Breakaway duct using magnets to prevent accidental breakage
 - Compatible with 1st release toolhead and dock.
+
+
+(*Take note - Carriage Body B will require printing support for the slider dowel section.)
