@@ -29,3 +29,5 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 # Video guide
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iZIkt7Dj_W4/0.jpg)](https://www.youtube.com/watch?v=iZIkt7Dj_W4)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iXTmIgk1lA8/0.jpg)](https://www.youtube.com/watch?v=iXTmIgk1lA8)
