@@ -28,7 +28,7 @@ BTC: Released
 
 Dockslide: Released
 
-Dockslide project was kindly supported by [Blurolls](https://www.blurolls3d.com)
+Dockslide project was kindly supported by [Blurolls](https://www.blurolls3d.com) and [LDO Motors](https://ldomotors.com/))
 
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
