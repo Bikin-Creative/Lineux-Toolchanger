@@ -33,21 +33,23 @@ Dockslide project was kindly supported by [Blurolls](https://www.blurolls3d.com)
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
 
-# Test videos
+# Videos
 
 https://github.com/user-attachments/assets/762defa3-31b9-4971-9426-da4857a4f154
 
 https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
-https://www.youtube.com/watch?v=U8tMA8A3mtE&t=1s
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/p6smInFlGkw_W4/0.jpg)](https://www.youtube.com/watch?v=p6smInFlGkw_W4)
 
-https://youtu.be/xHsFxVthdLM?si=bTcKz5V0HF7okz2N
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/FfiHD_YvOdc&t=2s_W4/0.jpg)](https://www.youtube.com/watch?v=FfiHD_YvOdc&t=2s_W4)
 
 # Prints
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20241028_141906_488.jpg)
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20241026_220624_252.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20250421_075741_308.jpg)
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20250421_155637_233.jpg)
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
 
