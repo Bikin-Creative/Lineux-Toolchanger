@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/p6smInFlGkw/0.jpg)](https://www.youtube.com/watch?v=p6smInFlGkw)
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/FfiHD_YvOdc_W4/0.jpg)](https://www.youtube.com/watch?v=FfiHD_YvOdc_W4)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/FfiHD_YvOdc/0.jpg)](https://www.youtube.com/watch?v=FfiHD_YvOdc)
 
 # Prints
 
