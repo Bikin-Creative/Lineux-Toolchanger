@@ -1,7 +1,7 @@
 # Dockslide
 Dockslide is an optional addon to recover back any build volume loss encountered when having a fixed dock location on the existing printer.
 
-# Thanks to Peter from Blurolls for providing the parts and components for the development of Dockslide
+# Thanks to Peter from Blurolls for providing the parts and components for the development of Dockslide. Also a big thanks to Jason from LDO for providing us with a higher torque motors.
 
 # BOM
 Current Stepper - 2 x LDO-42STH48-2004MAC (depending on number of toolheads used and total weight of the dockslide)
