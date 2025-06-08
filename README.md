@@ -21,14 +21,17 @@ Configurator is [here](https://www.myperniagaan.com/lineux)
 
 Generated file can easily be forwarded to your favourite supplier
 
-# Current stage
-Lineux: Released
+# Printers
+## Official
+VzBot 330
 
-BTC: Released
+Voron 2.4
 
-Dockslide: Released
+## Unofficial
 
-Dockslide project was kindly supported by ([Blurolls](https://www.blurolls3d.com) and [LDO Motors](https://ldomotors.com/))
+Flatland
+
+Official are printers that we owned and heavily tested. Unofficial are printers owned and mod by the community and tested and files contributed by them
 
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
