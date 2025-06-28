@@ -1,0 +1,7 @@
+variable_btc_travel_speed:                300
+variable_btc_toolchange_speed:            200
+variable_btc_wipe_speed:                  200
+variable_btc_z_hop:                       0
+variable_btc_temp_allow:                  1.0
+variable_btc_inc_leds:                    True
+variable_btc_enable_spoolman_integration: False
