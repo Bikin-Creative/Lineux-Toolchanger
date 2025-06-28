@@ -10,4 +10,4 @@ if (!-d $btc_install_folder) { mkdir ($btc_install_folder, 0775) or $!{EEXIST} o
 $ff = File::Fetch->new(uri => $btc_source);
 $file = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
 chmod 0755, "$btc_install_folder/$util_file";
-print "Btc downloaded. Now start installation by typing: cd btc && btc_util.pl\n";
+print "Btc downloaded. Now start installation by typing: cd btc && ./btc_util.pl\n";
