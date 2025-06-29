@@ -1,25 +1,31 @@
 #!/usr/bin/perl
 
+use File::Fetch;
+use IO::Uncompress::Unzip qw($UnzipError);
+
+$bundle_filename = "btc.zip";
+$zip_bundle = "https://raw.githubusercontent.com/Bikin-Creative/Lineux-Toolchanger/btc_dev/$bundle_filename";
 $btc_install_folder = glob("~/btc");
 $btc_staging_folder = "$btc_install_folder/config";
 $btc_staging_variables = "$btc_staging_folder/btc_variables.cfg";
 $btc_default_variables = "$btc_install_folder/default_variables.txt";
+$btc_unzip_folder = "$btc_install_folder/unzip";
 $printer_cfg_folder = glob("~/printer_data/config");
-$btc_cfg_folder = glob("~/printer_data/config/btc");  #####################
-$btc_variables_cfg = glob("~/printer_data/config/btc/btc_variables.cfg");
+$btc_cfg_folder = "$printer_cfg_folder/btc";
+$btc_variables_cfg = "$btc_cfg_folder/btc_variables.cfg";
 symlink($btc_cfg_folder, $btc_staging_folder);
 
-my @variables = qw( variable_btc_travel_speed variable_btc_toolchange_speed variable_btc_wipe_speed variable_btc_z_hop variable_btc_temp_allow variable_btc_inc_leds variable_btc_enable_spoolman_integration );
+#&download_bundle;
+my %defval;
+my ($key1, $values1, @variables) = read_entry($btc_default_variables);
+$defval{$key1} = $values1;
 my $regex = join '|', map quotemeta, @variables;
 $regex = qr/^($regex)\s*:\s*/;
 my %btcvar;
 my @addvar;
-my %defval;
 my ($key, $values) = read_entry($btc_variables_cfg);
 $btcvar{$key} = $values;
-my ($key1, $values1) = read_entry($btc_default_variables);
-$defval{$key1} = $values1;
-#use Data::Dumper; print Dumper $defvar{$btc_default_variables}; exit;
+#use Data::Dumper; print Dumper $defval{$btc_default_variables}; exit;
 
 foreach $templine (@variables)
 { print "$templine: $btcvar{$btc_variables_cfg}{$templine}\n";
@@ -29,6 +35,12 @@ foreach $templine (@variables)
 	}
 }
 &update_file;
+
+sub download_bundle
+{ my $ff = File::Fetch->new(uri => $zip_bundle);
+  my $file = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
+	unzip($bundle_filename, "$btc_unzip_folder");
+}
 
 sub update_file
 { open my $in, "$btc_staging_variables" or die $!;
@@ -48,11 +60,18 @@ sub update_file
 sub read_entry
 { my ($key) = @_;
   open my $in, '<', "$key" or die $!;
-
   my %values;
   while (<$in>)
-  { next if /^#/;
-    if (/$regex(.*?)(\s|\#)/) { $values{$1} = $2; }
+  { if ($key eq $btc_default_variables)
+  	{ if (/^(.*?)\s*\:\s*(.*?)(\s|\#)/)
+  		{ push @variables, $1;
+  			$values{$1} = $2;
+  		}
+  	}
+  	else
+  	{ next if /^#/;
+      if (/$regex(.*?)(\s|\#)/) { $values{$1} = $2; }
+    }
   }
-  return $key, \%values
+  return $key, \%values, @variables
 }
