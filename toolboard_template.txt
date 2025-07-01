@@ -1,0 +1,109 @@
+#TOOL 0 CONFIGURATION
+#Hardware:
+# V6 CHP
+# Sherpa Micro
+# EBB36 V1.2
+# 3010 hotend fan
+# dual 4010 part cooling fan
+
+####################
+# Tool0 Variables
+<gcode_macro_variables>
+# Absolute pickup moves in XYZ coordinates + speed (MUST HAVE 4 fields!!)
+# Accept any number of moves
+# Macros accepted other than coordinates
+# If using same axis position as previous move, use -128
+
+variable_pickup_approachlocation: [75,150,-128,100] # Absolute pickup location in XYZ coordinates + speed
+variable_pickup_moves: ["Dockslide_Deploy",
+                        "-128,110,-128,100",
+                        "85,-128,-128,100",
+                        "M400",
+                        "WIPE_NOZZLE DIRECTION=-1",
+                        "-128,150,-128,100",
+                        "Dockslide_Park"]
+
+variable_dropoff_approachlocation: [85,150,-128,10] # Absolute dropoff location in XYZ coordinates + speed
+variable_dropoff_moves: ["Dockslide_Deploy",
+                        "-128,110,-128,10",
+                        "75,-128,-128,10",
+                        "-128,150,-128,10",
+                        "Dockslide_Park"]
+
+variable_xoffset: 0              # For tool 0, offsets are all 0
+variable_yoffset: 0              #
+variable_zoffset: 0              #
+variable_shaperfreq_x: 54.2      # Tool 0 input shaper
+variable_shaperfreq_y: 55.2      #
+variable_shapertype_x: "mzv"     #
+variable_shapertype_y: "ei"      #
+
+# End of section options
+#######################################################
+
+variable_last_press: 0
+gcode:
+
+#Specify which serial device this tool is:
+[mcu toolboard0]
+#canbus_uuid: b4c145172fb8
+canbus_uuid: f7468be7ec3c
+
+#extruder setup connected to SHT36 Toolhead Board
+[extruder]
+<step_pin>
+<dir_pin>
+<enable_pin>
+microsteps: 16
+rotation_distance: 22.68
+gear_ratio: 50:10
+full_steps_per_rotation: 200
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+max_extrude_only_distance: 1400.0
+max_extrude_only_velocity: 75.0
+max_extrude_only_accel: 8700
+max_extrude_cross_section: 500
+<heater_pin>
+sensor_type: ATC Semitec 104NT-4-R025H42G
+<sensor_pin>
+min_temp: -100
+max_temp: 300
+min_extrude_temp: 170
+control = pid
+pid_Kp: 20.765
+pid_Ki: 1.357
+pid_Kd: 79.429
+
+[tmc2209 extruder]
+<uart_pin>
+run_current: 1.0
+interpolate: False
+stealthchop_threshold: 0
+
+[heater_fan hotend_fan]
+<heaterfan>
+max_power: 1.0
+kick_start_time: 0.5
+heater: extruder
+heater_temp: 60.0
+
+[fan_generic partfan0]
+<partfan>
+max_power: 1.0
+#shutdown_speed:
+#cycle_time:
+#hardware_pwm:
+kick_start_time: 0.5
+off_below: 0.1
+#tachometer_pin:
+#tachometer_ppr:
+#tachometer_poll_interval:
+#enable_pin:
+
+# Somehow SET_GCODE_VARIABLE is case sensitive. Since Fluidd is using a lowercase Tx macro name, we need this to be lower case, too.
+[gcode_macro t0]
+variable_spool_id: None
+variable_active: False
+gcode:
+	Tool_Pickup TOOLNUMBER=0
