@@ -22,6 +22,8 @@ my $btc_cfg_folder = "$printer_cfg_folder/btc";
 my $btc_variables_cfg = "$btc_cfg_folder/btc_variables.cfg";
 my $btc_main_cfg = "$printer_cfg_folder/btc/btc.cfg";
 
+my @alltoolboards = ("H36", "EBB36", "SHT36", "Nitehawk", "Others");
+my @toolboardfile = ("h36", "ebb36", "sht36", "nitehawk", "ebb36");
 my @variables = ();
 my $regex;
 
@@ -69,14 +71,13 @@ sub installbtc
 { print "\nHow many tools will you be using? Your choice: ";
 	my $toolnum = <STDIN>;
   chomp $toolnum;
-  my @alltoolboards = ("H36", "EBB36", "SHT36", "Nitehawk", "Others");
   my @toolboards = ();
   my $toolboard;
   for (my $i=1;$i<=$toolnum;$i++)
   { print "\nWhat is toolboard $i?\n1. H36, 2. EBB36, 3. SHT36, 4. Nitehawk, 5. Others or not sure. Your choice: ";
 	  $toolboard = <STDIN>;
     chomp $toolboard;
-    push @toolboards, $alltoolboards[$toolboard-1];
+    push @toolboards, $toolboard-1;
     $tooltxt .= "Tool $i: $alltoolboards[$toolboard-1]\n";
   }
   &download_bundle;
@@ -91,13 +92,13 @@ sub setuptoolboard
 { my @toolboards = @{$_[0]};
 	open my $tooltemplate, "<", "$btc_install_folder/toolboard_template.txt";
 	my $template = do { local $/; <$tooltemplate> };
-	open my $pinjson, "<", "$btc_install_folder/sht36_pins.json";
-	my $json = do { local $/; <$pinjson> };
-  $decoded = decode_json($json);
-  $latest_tag = $decoded->{tag_name};
 	for (my $i=0;$i<scalar(@toolboards);$i++)
 	{ my $newtemplate = $template;
 		$newtemplate =~ s/<gcode_macro_variables>/[gcode_macro _Variables_t$i]/;
+		open my $pinjson, "<", "$btc_install_folder/$toolboardfile[$toolboards[$i]]_pins.json";
+	  my $json = do { local $/; <$pinjson> };
+    $decoded = decode_json($json);
+    $latest_tag = $decoded->{tag_name};
 		keys %$decoded; # reset the internal iterator so a prior each() doesn't affect the loop
     while(my($k, $v) = each %$decoded) { $newtemplate =~ s/<$k>/$k: toolboard$i: $v/; }
     open my $newcfg, ">", "$btc_install_folder/tmp/tool_$i.cfg";

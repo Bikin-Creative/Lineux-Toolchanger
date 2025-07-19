@@ -1,0 +1,19 @@
+{
+  "step_pin": "gpio7",
+  "dir_pin": "gpio6",
+  "enable_pin": "gpio14",
+  "heater_pin": "gpio23",
+  "sensor_pin": "gpio27",
+  "uart_pin": "gpio15",
+  "heaterfan": "gpio21",
+  "partfan": "gpio13",
+  "probepin": "gpio22",
+  "ledpin": "gpio26",
+  "accelerometer": {
+    "chip": "lis2dw",
+    "cs_pin": "gpio12",
+    "spi_software_sclk_pin": "gpio2",
+    "spi_software_mosi_pin": "gpio3",
+    "spi_software_miso_pin": "gpio4"
+  }
+}
