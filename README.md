@@ -1,5 +1,6 @@
 # Lineux-Toolchanger
 Toolchanger for fdm 3d printers
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/one_2.4.jpg)
 
 # Discord
 Our Discord server can be found here:
