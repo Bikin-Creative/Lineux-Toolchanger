@@ -57,5 +57,5 @@ https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
 
 # Printers
-This project was developed on a Vzbot 330. Other printers would need slight modifications. We could add support for other printers when there are others who had modded successfully, or when
+This project was developed on a Vzbot 330 and Voron 2.4. Other printers would need slight modifications. We could add support for other printers when there are others who had modded successfully, or when
 we are able to get a hold of other printers to mod.
