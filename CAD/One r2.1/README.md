@@ -1,7 +1,7 @@
 # Overview
 
 ## Lineux One
-All cads released are based on a Voron_2.4 and Vzbot. You might need to adapt the dock and carriage to yr own printers. You can also check usermods section for any other printers cad/stl that may have been contributed by the community if they are not available here. Pls also do check in discord for any mods/contributions by the community.
+All cads released are based on a Voron 2.4 and Vzbot. You might need to adapt the dock and carriage to yr own printers. You can also check usermods section for any other printers cad/stl that may have been contributed by the community if they are not available here. Pls also do check in discord for any mods/contributions by the community.
 
 Designs, mechanism and bom do get updated as we progress. Do take note.
 
