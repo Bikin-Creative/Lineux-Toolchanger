@@ -14,6 +14,25 @@ Lineux Toolchanger consist of a suite of 3 parts:
 
 All 3 parts can be used with other systems. Example, Lineux can be used with other toolchanger plugin. Other toolchanger hardware can use Btc macros. Etc...
 
+# Is this project meant for you?
+## Other alternatives
+### Manufacture ready printers with toolchanger
+[Prusa XL](https://www.prusa3d.com/en/product/original-prusa-xl-semi-assembled-5-toolhead-3d-printer)
+### Other diy toolchanger projects
+[Stealthchanger](https://github.com/DraftShift/StealthChanger)
+
+[Tapchanger](https://github.com/viesturz/tapchanger)
+
+[Madmax](https://github.com/zruncho3d/madmax)
+## Cost
+Aside from costs at BOM, you will need these items. These are not included in the BOM
+1. PSU. You will need 120W power for every tool. 6 tools will need 720W
+2. Toolboard. Every tool will need 1 toolboard, eg [Fysetc H36](https://www.fysetc.com/cdn/shop/files/1_7592a53e-6f52-4a15-aeb8-11dbfa196516.jpg?v=1744444741)
+3. Extruder. Every tool will need 1 extruder
+4. Hotend. Every tool will need 1 hotend
+5. PDB. You will need a Power Distribution Board to provide connections/power to the toolboards, eg [Fysetc Tool Distribution Board](https://www.fysetc.com/cdn/shop/files/a3c4612ef030bc35ada3147286ebf6aa_b0e6d879-f14f-4daf-94f8-5ec51c08036b.jpg?v=1739847175)
+
+If you're keen on preceeding, start [here!](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
 # BOM
 BOM is [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/BOM)
 
