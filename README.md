@@ -1,5 +1,6 @@
 # Lineux-Toolchanger
 Toolchanger for fdm 3d printers
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/one_2.4.png)
 
 # Discord
 Our Discord server can be found here:
@@ -33,6 +34,7 @@ Aside from costs at BOM, you will need these items. These are not included in th
 5. PDB. You will need a Power Distribution Board to provide connections/power to the toolboards, eg [Fysetc Tool Distribution Board](https://www.fysetc.com/cdn/shop/files/a3c4612ef030bc35ada3147286ebf6aa_b0e6d879-f14f-4daf-94f8-5ec51c08036b.jpg?v=1739847175)
 
 If you're keen on preceeding, start [here!](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
+
 # BOM
 BOM is [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/BOM)
 
@@ -75,5 +77,5 @@ https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
 
 # Printers
-This project was developed on a Vzbot 330. Other printers would need slight modifications. We could add support for other printers when there are others who had modded successfully, or when
+This project was developed on a Vzbot 330 and Voron 2.4. Other printers would need slight modifications. We could add support for other printers when there are others who had modded successfully, or when
 we are able to get a hold of other printers to mod.
