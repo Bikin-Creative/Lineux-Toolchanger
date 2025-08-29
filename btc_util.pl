@@ -12,7 +12,6 @@ use File::Copy qw(copy);
 my $bundle_filename = "btc.zip";
 my $src_api = "https://api.github.com/repos/Bikin-Creative/Lineux-Toolchanger/releases/latest";
 my $btc_install_folder = glob("~/btc");
-my $btc_staging_folder = "$btc_install_folder/config";
 my $btc_backup_folder = "$btc_install_folder/backup";
 my $btc_staging_variables = "$btc_staging_folder/btc_variables.cfg";
 my $btc_default_variables = "$btc_install_folder/default_variables.txt";
@@ -28,7 +27,6 @@ my @variables = ();
 my $regex;
 
 if (!-d $btc_cfg_folder) { mkdir ($btc_cfg_folder, 0775) or $!{EEXIST} or die "Make directory $btc_cfg_folder failed!!"; }
-symlink($btc_cfg_folder, $btc_staging_folder);
 &move_includes_frombtc; # Move includes from btc.cfg. For those using very early versions
 
 my ($dowhat, $latest_tag);
