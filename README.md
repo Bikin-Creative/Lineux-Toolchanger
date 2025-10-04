@@ -71,6 +71,9 @@ Dockslide project was kindly supported by ([Blurolls](https://www.blurolls3d.com
 # Instructions
 Instructions/Guides are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/Manual)
 
+# If you would like to support our project
+### [Ko-fi](https://ko-fi.com/lineux_toolchanger) ###
+
 # Videos
 
 https://github.com/user-attachments/assets/762defa3-31b9-4971-9426-da4857a4f154
