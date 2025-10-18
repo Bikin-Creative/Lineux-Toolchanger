@@ -16,6 +16,7 @@ Lineux Toolchanger consist of a suite of 3 parts:
 All 3 parts can be used with other systems. Example, Lineux can be used with other toolchanger plugin. Other toolchanger hardware can use Btc macros. Etc...
 
 Lineux has evolved into a front mounted Toolchanger with Dockslide as our primary configuration.
+If you intend to use a fixed dock configuration, pls do check or ask in discord if there are any mods or alternatives that may have already been released.
 
 (Design, hardwares and configuration may change. Do check with us on discord)
 
