@@ -13,6 +13,7 @@ my $bundle_filename = "btc.zip";
 my $src_api = "https://api.github.com/repos/Bikin-Creative/Lineux-Toolchanger/releases/latest";
 my $btc_install_folder = glob("~/btc");
 my $btc_backup_folder = "$btc_install_folder/backup";
+my $btc_staging_folder = "$btc_install_folder/config";
 my $btc_staging_variables = "$btc_staging_folder/btc_variables.cfg";
 my $btc_default_variables = "$btc_install_folder/default_variables.txt";
 my $btc_unzip_folder = "$btc_install_folder/unzip";
