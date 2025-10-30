@@ -1,3 +1,17 @@
+# Instructions for Installing BTC
+## Using installer scripts (Recommended)
+1. SSH into pi
+2. Type the following and press enter
+
+```wget https://raw.githubusercontent.com/Bikin-Creative/Lineux-Toolchanger/btc_dev/install.pl -O - | perl```
+
+3. This will create btc folder and download utility file. Next proceed with btc utility file
+
+```cd btc && ./btc_util.pl```
+
+4. Follow on screen instructions for using the utility file
+
+# Old instructions (Deprecated) 
  1. Create new folder btc in config folder.
  2. Copy files into btc folder.
  3. Edit tool_0.cfg. Change all relevant sections pertaining to the toolhead/board.
