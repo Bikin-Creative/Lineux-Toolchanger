@@ -1,0 +1,19 @@
+{
+  "step_pin": "PD0",
+  "dir_pin": "PD1",
+  "enable_pin": "PD2",
+  "heater_pin": "PB13",
+  "sensor_pin": "PA3",
+  "uart_pin": "PA15",
+  "heaterfan": "PA1",
+  "partfan": "PA0",
+  "probepin": "PB6",
+  "ledpin": "PD3",
+  "accelerometer": {
+    "chip": "adxl345",
+    "cs_pin": "PB12",
+    "spi_software_sclk_pin": "PB10",
+    "spi_software_mosi_pin": "PB11",
+    "spi_software_miso_pin": "PB2"
+  }
+}
