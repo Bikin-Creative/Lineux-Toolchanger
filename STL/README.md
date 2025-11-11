@@ -39,4 +39,10 @@ Dockslide is an optional addon to recover back any build volume loss encountered
 3. Docks (1 dock per toolhead required)
 4. Tubby (Required for tool nozzle offset calibration)
 
+# Printing Orientation
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/dock_print_orientation.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/toolhead_print_orientation.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/voron_carriage_print_orientation.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/vzbot_carriage_print_orientation.jpg)
+
 Join our [Discord](https://discord.gg/Xwqbjj4VjH) for any questions u may have. Let's go...
