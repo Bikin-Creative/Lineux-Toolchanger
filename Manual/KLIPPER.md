@@ -10,6 +10,7 @@
 ```cd btc && ./btc_util.pl```
 
 4. Follow on screen instructions for using the utility file
+5. Reboot yr pi
 
 # Old instructions (Deprecated) 
  1. Create new folder btc in config folder.
