@@ -88,19 +88,23 @@ https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 # Prints
 
 Printed by art on voron 2.4
+
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/capt_am_art.jpg)
 
 Printed by 3dfiy My Life on vzbot330
+
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/clownfish.jpg)
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/fuzzy_bear.jpg)
 
 Printed by guy on ratrig vcore3
+
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/guy_print.jpg)
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/guy_print1.jpg)
 
 Printed by camtab on vzbot330
+
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/deadpool_camtab.jpg)
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/venom_camtab.jpg)
