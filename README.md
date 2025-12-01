@@ -87,15 +87,23 @@ https://github.com/user-attachments/assets/436ea148-65da-4729-8020-6bcd89354991
 
 # Prints
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20241028_141906_488.jpg)
+Printed by art on voron 2.4
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/capt_am_art.jpg)
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20250422_175503_703.jpg)
+Printed by 3dfiy My Life on vzbot330
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/clownfish.jpg)
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20250421_075741_308.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/fuzzy_bear.jpg)
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20250421_155637_233.jpg)
+Printed by guy on ratrig vcore3
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/guy_print.jpg)
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/IMG_20240925_235251_198.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/guy_print1.jpg)
+
+Printed by camtab on vzbot330
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/deadpool_camtab.jpg)
+
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/venom_camtab.jpg)
 
 # Printers
 This project was developed on a Vzbot 330 and Voron 2.4. Other printers would need slight modifications. We could add support for other printers when there are others who had modded successfully, or when
