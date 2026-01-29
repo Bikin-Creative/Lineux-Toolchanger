@@ -1,6 +1,6 @@
 # Overview
 
-## Lineux One r2.1 (Latest Release)
+## Lineux Stealth (Latest Release)
 All cads released are based on a Voron 2.4 and Vzbot. You might need to adapt the dock and carriage to yr own printers. You can also check usermods section for any other printers cad/stl that may have been contributed by the community if they are not available here. Pls also do check in discord for any mods/contributions by the community.
 
 Designs, mechanism and bom do get updated as we progress. Do take note. (It's a good practice to ask before committing to the build as design and hardwares may change)
@@ -21,11 +21,10 @@ Solid top/bottom layers: 5
 ```
 
 # Carriage
-Refer to the printer carriage available or check under usermods section. Pls do check in discord as well. All carriages are designed to be front facing.
+Refer to the printer carriage available or check under usermods section. Pls do check in discord as well. All carriages are designed to be front facing and utilising Dockslide.
 
 # Toolhead
-Lineux One Toolheads doesn't have any part cooling fan. You will only need 1 5015 part cooling fan on the carriage instead.
-The part cooling duct is fixed height, therefore you will need to have the same height hotends across all toolheads. 
+Lineux r2t Toolheads doesn't have any part cooling fan. You will only need 1 5015 part cooling fan on the carriage instead.
 
 # Docks
 Simple docking system.
