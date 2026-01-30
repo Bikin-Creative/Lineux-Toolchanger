@@ -1,5 +1,4 @@
-#!/usr/bin/perl -w
-use strict;
+#!/usr/bin/perl
 
 use File::Fetch;
 use IO::Uncompress::Unzip qw($UnzipError);
@@ -9,31 +8,44 @@ use File::Spec::Functions qw(splitpath);
 use File::Path qw(mkpath);
 use File::Copy qw(copy);
 
-my $bundle_filename = "btc.zip";
-my $src_api = "https://api.github.com/repos/Bikin-Creative/Lineux-Toolchanger/releases/latest";
-my $btc_install_folder = glob("~/btc");
-my $btc_backup_folder = "$btc_install_folder/backup";
-my $btc_staging_folder = "$btc_install_folder/config";
-my $btc_staging_variables = "$btc_staging_folder/btc_variables.cfg";
-my $btc_default_variables = "$btc_install_folder/default_variables.txt";
-my $btc_unzip_folder = "$btc_install_folder/unzip";
-my $printer_cfg_folder = glob("~/printer_data/config");
-my $btc_cfg_folder = "$printer_cfg_folder/btc";
-my $btc_variables_cfg = "$btc_cfg_folder/btc_variables.cfg";
-my $btc_main_cfg = "$printer_cfg_folder/btc/btc.cfg";
+$tmploc = "https://www.myperniagaan.com/lineux";
+$version = 2.1;
+$versions_file = "$tmploc/versions.txt";
+$btc_util_file = "$tmploc/btc_util.pl";
+$bundle_filename = "btc.zip";
+$btc_bundle = "$tmploc/$bundle_filename";
 
-my @alltoolboards = ("H36", "EBB36", "SHT36", "Nitehawk", "Others");
-my @toolboardfile = ("h36", "ebb36", "sht36", "nitehawk", "ebb36");
-my @variables = ();
-my $regex;
+$btc_install_folder = glob("~/btc");
+$btc_unzip_folder = "$btc_install_folder/unzip";
+
+
+
+
+$src_api = "https://api.github.com/repos/Bikin-Creative/Lineux-Toolchanger/releases/latest";
+$btc_backup_folder = "$btc_install_folder/backup";
+$btc_staging_folder = "$btc_install_folder/config";
+$btc_staging_variables = "$btc_staging_folder/btc_variables.cfg";
+$btc_default_variables = "$btc_install_folder/default_variables.txt";
+
+$printer_cfg_folder = glob("~/printer_data/config");
+$btc_cfg_folder = "$printer_cfg_folder/btc";
+$btc_variables_cfg = "$btc_cfg_folder/btc_variables.cfg";
+$btc_main_cfg = "$printer_cfg_folder/btc/btc.cfg";
+
+@alltoolboards = ("H36", "EBB36", "SHT36", "Nitehawk", "Others");
+@toolboardfile = ("h36", "ebb36", "sht36", "nitehawk", "ebb36");
+@variables = ();
 
 if (!-d $btc_cfg_folder) { mkdir ($btc_cfg_folder, 0775) or $!{EEXIST} or die "Make directory $btc_cfg_folder failed!!"; }
-&move_includes_frombtc; # Move includes from btc.cfg. For those using very early versions
+
+&check_versions;
+&main_menu;
+exit;
 
 my ($dowhat, $latest_tag);
 my $tooltxt = "";
 my $decoded;
-&main_menu;
+
 
 
 
@@ -43,12 +55,34 @@ my $decoded;
 #&update_file; # Update btc_variables.cfg
 #use Data::Dumper; print Dumper $defval{$btc_default_variables}; exit;
 
-sub main_menu
-{ print "\nWelcome to Btc Utility\nWhat do you want to do?\n1. Install new\n2. Update\n3. Add tool\n4. Quit\n\nYour choice: ";
-	my $dowhat = <STDIN>;
-  chomp $dowhat;
-  if ($dowhat eq "1") { &doinstall; }
-  elsif ($dowhat eq "4") { exit; }
+sub download_bundle
+{ print "Downloading package...";
+  $ff = File::Fetch->new(uri => $btc_bundle);
+  $fh = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
+  unzip("$btc_install_folder/$bundle_filename", "$btc_unzip_folder");
+  unlink("$btc_install_folder/$bundle_filename.zip");
+}
+
+sub installbtc
+{ print "\nHow many tools will you be using? Your choice: ";
+	my $toolnum = <STDIN>;
+  chomp $toolnum;
+  my @toolboards = ();
+  my $toolboard;
+  for (my $i=1;$i<=$toolnum;$i++)
+  { print "\nWhat is toolboard $i?\n1. H36, 2. EBB36, 3. SHT36, 4. Nitehawk, 5. Others or not sure. Your choice: ";
+	  $toolboard = <STDIN>;
+    chomp $toolboard;
+    push @toolboards, $toolboard-1;
+    $tooltxt .= "Tool $i: $alltoolboards[$toolboard-1]\n";
+  }
+  &download_bundle;
+  exit;
+  &backupconfig;
+  &moveconfig;
+  &setuptoolboard(\@toolboards);
+	print "\nInstalling ...";
+  print "\nDone!\n$tooltxt\nNext step is to firmware restart and check for cfg errors.\n";
 }
 
 sub doinstall
@@ -66,26 +100,58 @@ sub doinstall
   }
 }
 
-sub installbtc
-{ print "\nHow many tools will you be using? Your choice: ";
-	my $toolnum = <STDIN>;
-  chomp $toolnum;
-  my @toolboards = ();
-  my $toolboard;
-  for (my $i=1;$i<=$toolnum;$i++)
-  { print "\nWhat is toolboard $i?\n1. H36, 2. EBB36, 3. SHT36, 4. Nitehawk, 5. Others or not sure. Your choice: ";
-	  $toolboard = <STDIN>;
-    chomp $toolboard;
-    push @toolboards, $toolboard-1;
-    $tooltxt .= "Tool $i: $alltoolboards[$toolboard-1]\n";
-  }
-  &download_bundle;
-  &backupconfig;
-  &moveconfig;
-  &setuptoolboard(\@toolboards);
-	print "\nInstalling ...";
-  print "\nDone!\n$tooltxt\nNext step is to firmware restart and check for cfg errors.\n";
+sub main_menu
+{ print "\nWelcome to Btc Utility\nWhat do you want to do?\n1. Install new\n2. Update\n3. Add tool\n4. Quit\n\nYour choice: ";
+	my $dowhat = <STDIN>;
+  chomp $dowhat;
+  if ($dowhat eq "1") { &doinstall; }
+  elsif ($dowhat eq "4") { exit; }
 }
+
+sub check_versions
+{ my $ff = File::Fetch->new(uri => $versions_file);
+  my $fh = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
+	open (TMP, "$btc_install_folder/versions.txt");
+	@versions = <TMP>;
+	close (TMP);
+	foreach $templine (@versions)
+	{ ($key, $value) = split (/\|/, $templine);
+		$version{$key} = $value;
+	}
+	if ($version{btc_util} > $version)
+	{ print "btc_util has a newer version. Downloaded, please restart btc_util\n";
+		$ff = File::Fetch->new(uri => $btc_util_file);
+    $fh = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
+    exit;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 sub setuptoolboard
 { my @toolboards = @{$_[0]};
@@ -105,24 +171,7 @@ sub setuptoolboard
 	}
 }
 
-sub download_bundle
-{ print "Downloading package...";
-	my $ff = File::Fetch->new(uri => $src_api);
-  my $fh = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
-	open my $latest, "<", "$btc_install_folder/latest";
-	my $json = do { local $/; <$latest> };
-  my $decoded = decode_json($json);
-  $latest_tag = $decoded->{tag_name};
-  $latest_tag =~ s/^v//;
-  # If update available TODO
 
-  my $zip_bundle = $decoded->{zipball_url};
-  $ff = File::Fetch->new(uri => $zip_bundle);
-  $fh = $ff->fetch(to => "$btc_install_folder") or die $ff->error;
-  rename $fh, "$btc_install_folder/$latest_tag.zip";
-  unzip("$btc_install_folder/$latest_tag.zip", "$btc_unzip_folder");
-  unlink("$btc_install_folder/$latest_tag.zip");
-}
 
 sub backupconfig
 { print "\nBacking up current configs...";
@@ -135,28 +184,6 @@ sub moveconfig
 { print "\nCopying new configs...";
 	my $zipfolder = "$btc_unzip_folder/Bikin-Creative-Lineux-Toolchanger-9d9acd0Klipper";
 	rename $zipfolder, "$btc_cfg_folder/";
-}
-
-sub move_includes_frombtc
-{ open my $btcmain, "<", $btc_main_cfg;
-	my @tmpdata = <$btcmain>;
-	close $btcmain;
-	open my $old, "<", $btc_variables_cfg;
-	open my $new, ">", "$btc_variables_cfg.tmp";
-	open my $btcnew, ">", "$btc_main_cfg";
-	foreach my $templine (@tmpdata)
-	{ if (($templine =~ /^\s*(\[include .*?\])/) && ($templine !~ /^\s*(\[include \.\/btc_variables\.cfg\])/))
-		{ print $new "$1\n";
-			print "Moving $1 from btc.cfg to btc_variables.cfg\n";
-		}
-		else { print $btcnew $templine; }
-	}
-	while( <$old> ) { print $new $_; }
-  close $old;
-  close $new;
-  close $btcnew;
-  unlink($btc_variables_cfg);
-  rename("$btc_variables_cfg.tmp", $btc_variables_cfg);
 }
 
 sub update_file
