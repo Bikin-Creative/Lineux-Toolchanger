@@ -1,6 +1,6 @@
 # Lineux-Toolchanger
 ### Toolchanger for fdm 3d printers
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_voron_350.png)![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_vzbot_330.png)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_voron_350.png)![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_vzbot330.png)
 
 # Discord
 Our Discord server can be found here:
