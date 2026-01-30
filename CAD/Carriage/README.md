@@ -1,19 +1,26 @@
-# Dockslide
-Dockslide is an optional addon to recover back any build volume loss encountered when having a fixed dock location on the existing printer.
-
-# Thanks to Peter from Blurolls for providing the parts and components for the development of Dockslide. Also a big thanks to Jason from LDO for providing us with a higher torque motors.
-
-# BOM
-Current Stepper - 2 x LDO-42STH48-2004MAC (depending on number of toolheads used and total weight of the dockslide)
-
-Current Rails - 2 x mgn 9H 250mm
-
-2 x mr685zz bearings
-
-2 x shaft collar bore5mm
+# Carriages with Printed Carrier and Lock Plate
+Available Vzbot and Voron options for printed carrier and lock plate.
 
 
-Pls do not hesitate to ask any questions regarding the Dockslide on our discord channel.
+# Voron Printed Carriage (Lineux version)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/voron_printed_carriage.gif)
 
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/DockSlide.png)
+# Voron CNC Carriage
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/voron_cnc_carriage.gif)
+
+
+# Voron Fysetc CNC Tap
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/voron_fysetc_tap.gif)
+
+
+# Vzbot Carriage
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/vzbot_carriage.gif)
+
+
+
+All derivatives belongs to their respective owners
+[Voron](https://github.com/vorondesign)
+[Vzbot](https://github.com/VzBot3D)
+[Voron CNC Carriage](https://github.com/Vitalii3D-xyz/VoronLightweightXCarriage)
+[Voron Fysetc CNC Tap](https://github.com/FYSETC)
