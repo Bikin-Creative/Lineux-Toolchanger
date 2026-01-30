@@ -15,7 +15,7 @@ Available Vzbot and Voron options for printed carrier and lock plate.
 
 
 # Vzbot Carriage
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/vzbot_carriage.gif)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/carriage_vzbot.gif)
 
 
 
