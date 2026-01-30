@@ -19,8 +19,8 @@ Available Vzbot and Voron options for printed carrier and lock plate.
 
 
 
-All derivatives belongs to their respective owners
-[Voron](https://github.com/vorondesign)
-[Vzbot](https://github.com/VzBot3D)
-[Voron CNC Carriage](https://github.com/Vitalii3D-xyz/VoronLightweightXCarriage)
-[Voron Fysetc CNC Tap](https://github.com/FYSETC)
+All derivatives belongs to their respective owners<br/>
+[Voron](https://github.com/vorondesign)<br/>
+[Vzbot](https://github.com/VzBot3D)<br/>
+[Voron CNC Carriage](https://github.com/Vitalii3D-xyz/VoronLightweightXCarriage)<br/>
+[Voron Fysetc CNC Tap](https://github.com/FYSETC)<br/>
