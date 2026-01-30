@@ -52,10 +52,6 @@ Aside from costs at BOM, you will need these items. These are not included in th
 # BOM
 BOM is [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tree/main/BOM)
 
-Configurator is [here](https://www.myperniagaan.com/lineux)
-
-Generated file can easily be forwarded to your favourite supplier
-
 Lineux bom kit by fysetc is also available for purchase
 [Lineux Kit](https://www.aliexpress.com/item/1005009944459058.html)
 
