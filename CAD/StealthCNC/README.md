@@ -1,19 +1,17 @@
-# Dockslide
-Dockslide is an optional addon to recover back any build volume loss encountered when having a fixed dock location on the existing printer.
+# Lineux Stealth CNC (StealthC)
+StealthC is a CNC-machined Carrier and Lock Plate designed for Lineux. The available carriage mounting options are listed below.
 
-# Thanks to Peter from Blurolls for providing the parts and components for the development of Dockslide. Also a big thanks to Jason from LDO for providing us with a higher torque motors.
+For the Fysetc Voron CNC Tap, the existing tap MGN plate is removed and replaced directly with the StealthC Carrier and Lock Plate, as illustrated. No belt removal is required, making the adaptation of Lineux StealthC a straightforward and simple process.
 
-# BOM
-Current Stepper - 2 x LDO-42STH48-2004MAC (depending on number of toolheads used and total weight of the dockslide)
+# Lineux StealthC Voron Fysetc CNC Tap
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_stealthc_fysetc_cnc_tap.gif)
 
-Current Rails - 2 x mgn 9H 250mm
+# Lineux StealthC Voron CNC Carriage
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_stealthc_voron_cnc_carriage.gif)
 
-2 x mr685zz bearings
+# Lineux StealthC Voron Printed Carriage
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_stealthc_voron_printed_carriage.gif)
 
-2 x shaft collar bore5mm
+# Lineux StealthC Vzbot Carriage
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_stealthc_vzbot.gif)
 
-
-Pls do not hesitate to ask any questions regarding the Dockslide on our discord channel.
-
-
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/DockSlide.png)
