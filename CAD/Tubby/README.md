@@ -9,4 +9,4 @@ Bom for tubby is [Here](https://github.com/Bikin-Creative/Lineux-Toolchanger/tre
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/tubby.png)
 
 # Tubby Deviation Sample
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/tubby_result.jpg)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/tubby_result.jpg)
