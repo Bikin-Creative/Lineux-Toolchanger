@@ -39,6 +39,12 @@ If you’re simply looking for a plug-and-play machine, there are other great op
 
 [Madmax](https://github.com/zruncho3d/madmax)
 
+# All derivatives belong to their respective owners.<br/>
+[Voron](https://github.com/vorondesign)<br/>
+[Vzbot](https://github.com/VzBot3D)<br/>
+[Voron CNC Carriage](https://github.com/Vitalii3D-xyz/VoronLightweightXCarriage)<br/>
+[Voron Fysetc CNC Tap](https://github.com/FYSETC)<br/>
+
 
 ## Cost
 Aside from costs at BOM, you will need these items. These are not included in the BOM
