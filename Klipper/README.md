@@ -21,12 +21,11 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 3. tool_x.cfg <- Individual tool settings, required
 4. bashed_macros.cfg <- For stress testing of toolchanger, required after set up
 5. btc_nudge.cfg <- Macros for nudge tool, required during nozzle offset calibration set up
-6. btc_extras <- Sample macros to use in start/end print
-7. leds_x.cfg <- Required if using led effect
-8. dockslide.cfg <- Required if using dockslide
+6. btc_extras <- Sample macros to use in start/end print and homing override
+7. dockslide.cfg <- Required if using dockslide
 
 
-# Video guide
+# Video guide (video guide has not been updated to latest version of BTC)
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iZIkt7Dj_W4/0.jpg)](https://www.youtube.com/watch?v=iZIkt7Dj_W4)
 
