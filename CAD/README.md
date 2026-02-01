@@ -24,10 +24,16 @@ Solid top/bottom layers: 5
 Refer to the printer carriage available or check under usermods section. Pls do check in discord as well. All carriages are designed to be front facing and utilising Dockslide.
 
 # Toolhead
-Lineux r2t Toolheads doesn't have any part cooling fan. You will only need 1 5015 part cooling fan on the carriage instead.
+Lineux R2T and EVA toolheads do not include onboard part-cooling fans. Instead, a single 5015 part-cooling fan mounted on the carriage is required.
+
+Anthead and Dragonburner toolheads have their own onboard part-cooling fans, so a 5015 fan on the carriage is not needed when using these toolheads.
+
+If you choose to have a mixture of toolheads in your setup, you should retain the 5015 carriage-mounted fan and use the multi-tool duct for part cooling.
 
 # Docks
-Simple docking system.
+We recommend using Dockslide, as it allows you to use a single optimized dock design for both VzBot and Voron carriages.
+
+If you are not using Dockslide, you will need to select the appropriate dock from the Fixed Dock files to match your specific carriage.
 
 # Dockslide
 Dockslide is a moving dock system to recover back any build volume loss encountered when having a fixed dock on the existing printer in which the frame wasn't extended in X or Y.
