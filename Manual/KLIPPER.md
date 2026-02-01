@@ -4,7 +4,7 @@
  4. Optional, add more cfg for additional toolhead. For each additional toolhead, edit btc_variables.cfg to include the new tool_x.cfg files.
  5. Edit tool_x.cfg as per step 3.
  6. Firmware restart to verify all cfg are valid. Fix any error/s found before proceeding further.
- 7. Edit all tool_x.cfg to set the approach position for x axis. Do this for both pickup and dropoff positions.
+ 7. Edit all tool_x.cfg to set the toolhead pickup and dropoff movement.
  8. Edit tool_x.cfg to set the following:
     1. variable_pickup_approachlocation
     2. variable_pickup_moves
