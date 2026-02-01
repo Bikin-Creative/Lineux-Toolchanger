@@ -2,9 +2,10 @@
 Bikin Toolchanger is using pure macros. It uses snippets of codes from the [Magswitch](https://github.com/jera-sea/MagSwitch-Toolchanger) project and the
 [Klicky Probe](https://github.com/jlas1/Klicky-Probe).
 
-# Nudge Tool
+# Nozzle Offset Calibration Tool
+You can use Tubby, Nudge, camera calibration or manual calibration. 
 Nudge tool was created by [zruncho](https://github.com/zruncho3d/nudge). It provides a very accurate and convenient way to align nozzles for toolchangers.
-Btc provided macros to utilize the tool for nozzle alignment. Instructions for use are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Manual/NUDGE.md).
+Btc provide macros to utilize the tool for nozzle alignment. Instructions for use are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Manual/NUDGE.md).
 
 # Macro Status
 Fully tested and working. Released.
