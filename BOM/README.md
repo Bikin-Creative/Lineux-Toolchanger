@@ -3,7 +3,7 @@ BOM difference between latest r2t and current Fysetc Lineux r2.1 BOM Kit
 
 
 Voron Carriage<br/>
-m3x5x4 brass insert (8 instead of 12)<br/>
+m3x5x4 brass insert (10 instead of 12)<br/>
 m3 hex nut (additional 2)<br/>
 m3 x 8mm shcs (6 instead of 4)<br/>
 m3 x 10mm shcs (not required)<br/>
