@@ -28,6 +28,5 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 
 # Video guide (video guide has not been updated to latest version of BTC)
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iZIkt7Dj_W4/0.jpg)](https://www.youtube.com/watch?v=iZIkt7Dj_W4)
+[![IMAGE ALT TEXT HERE](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/btc_guide.png)](https://youtu.be/QYzVRNqW2J0?si=Q4HBHzA9LW7UP1U8)
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iXTmIgk1lA8/0.jpg)](https://www.youtube.com/watch?v=iXTmIgk1lA8)
