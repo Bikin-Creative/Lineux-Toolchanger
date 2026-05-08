@@ -26,7 +26,7 @@ Instructions are [here](https://github.com/Bikin-Creative/Lineux-Toolchanger/blo
 7. dockslide.cfg <- Required if using dockslide
 
 
-# Video guide (video guide has not been updated to latest version of BTC)
+# Video guide
 
 [![IMAGE ALT TEXT HERE](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/btc_guide.png)](https://youtu.be/QYzVRNqW2J0?si=Q4HBHzA9LW7UP1U8)
 
