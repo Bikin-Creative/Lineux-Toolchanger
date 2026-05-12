@@ -2,7 +2,7 @@
 
 Currently, four toolheads are supported by Lineux using the provided files.<br/>
 The included image specifications below may help you estimate how many toolheads can be installed on your printer.<br/>
-For toolheads other than R2T, some parts may require modification to ensure compatibility with Lineux.<br/>
+For toolheads other than R2T, some parts may require modification to ensure compatibility with Lineux. The cad included is with a Micro Sherpa extruder. Use them at yr own risk !!! Pls check with our Discord before committing to any print.<br/>
 
 # Anthead
 Special thanks to hartk1213<br/>
