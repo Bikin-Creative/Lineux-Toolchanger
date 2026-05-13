@@ -2,7 +2,7 @@
 
 Currently, four toolheads are supported by Lineux using the provided files.<br/>
 The included image specifications below may help you estimate how many toolheads can be installed on your printer.<br/>
-Our recommended toolhead currently is Tiga. For toolheads other than Tiga, some parts may require modification to ensure compatibility with Lineux and we are not responsible if things didn't turn out the way you want expect them to be. The cad included is with a Micro Sherpa extruder to be used as an example for the modifications. Use them at yr own risk !!! Pls check with our Discord before committing to any print.<br/>
+Our recommended toolhead currently is Tiga. For toolheads other than Tiga, some parts may require modification to ensure compatibility with Lineux and we are not responsible if things didn't turn out the way you want/expect them to be. The cad included is with a Micro Sherpa extruder to be used as an example for the modifications. Use them at yr own risk !!! Pls check with our Discord before committing to any print.<br/>
 
 # Anthead
 Special thanks to hartk1213<br/>
