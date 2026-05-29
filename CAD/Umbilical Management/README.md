@@ -5,4 +5,6 @@ The Nexus Box is designed to house toolhead distribution boards and supports eit
 or one [Fysetc Tool Distribution Board](https://github.com/FYSETC/Tool-Distribution-Board)<br/><br/>
 
 This will enable cleaner wirings for your umbilicals from your toolheads to your MCU.<br/><br/><br/>
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_voron_24_r2_umbilical_management.png)![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_vzbot_330_umbilical_management.png)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_voron_24_r2_umbilical_management.png)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_vzbot_330_umbilical_management.png)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_sling_umbilical_management.png)
