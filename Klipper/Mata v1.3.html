@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800,900">
+    <title>Mata - Calibration Tool</title>
+    <style> 
+        /* --- Global & Typography --- */
+        body { font-family: "Montserrat", sans-serif; text-align: center; background-color: #f1f5f9; color: #334155; margin: 0; padding: 30px 10px; } 
+        h1 { font-weight: 900; margin-top: 0; margin-bottom: 5px; color: #0f172a; font-size: 42px; letter-spacing: -1px; text-transform: uppercase; }
+        h3 { margin-top: 0px; color: #64748b; margin-bottom: 35px; font-weight: 600; font-size: 16px; letter-spacing: 0.5px; }
+        
+        button { font-family: "Montserrat", sans-serif; text-align: center; cursor: pointer; transition: all 0.2s ease; border: none; border-radius: 6px; } 
+        button:disabled { background: #e2e8f0 !important; color: #94a3b8 !important; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+        button:active:not(:disabled) { transform: scale(0.96); }
+
+        /* --- Panels --- */
+        .ui-panel { background: white; padding: 25px; display: inline-block; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 25px; vertical-align: top; width: 650px; text-align: left; box-sizing: border-box; }
+        .ui-panel-title { font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-size: 18px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;}
+        
+        /* Setup Panel */
+        .setup-panel { background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 25px; display: inline-block; box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2); width: 650px; box-sizing: border-box; }
+        .setup-panel label { margin-left: 10px; font-size: 13px; font-weight: 600; color: #94a3b8; }
+        .setup-panel input[type="text"], .setup-panel select { padding: 8px 12px; font-size: 14px; border-radius: 6px; border: 1px solid #334155; text-align: center; margin: 5px; background: #0f172a; color: white; outline: none; transition: border 0.2s;}
+        .setup-panel input[type="text"]:focus, .setup-panel select:focus { border-color: #3b82f6; }
+        .setup-panel input[type="text"] { width: 120px; }
+        .setup-panel select { width: 130px; cursor: pointer; }
+        .setup-row { margin-bottom: 5px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+        
+        /* Video Container */
+        #videoContainer { position: relative; margin: 0 auto 20px auto; width: 640px; height: 480px; border: 6px solid #1e293b; overflow: hidden; background-color: #000000; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); } 
+        .stream-element { width: 100%; height: 100%; object-fit: contain; display: block; transform-origin: center; transition: transform 0.1s ease-out; } 
+        
+        /* --- Crosshair Styles --- */
+        #crosshairOverlay { position: absolute; top: 50%; left: 50%; width: 120px; height: 120px; transform: translate(-50%, -50%); pointer-events: none; z-index: 100; }
+        .cross-part { position: absolute; box-sizing: border-box; }
+        
+        /* Style 1: Classic (Red) */
+        .style-classic .c-circle { width: 100%; height: 100%; border: 2px solid #ef4444; border-radius: 50%; box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); top:0; left:0;}
+        .style-classic .c-line-h { top: 50%; left: -20px; right: -20px; height: 2px; background: #ef4444; box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); margin-top:-1px;}
+        .style-classic .c-line-v { left: 50%; top: -20px; bottom: -20px; width: 2px; background: #ef4444; box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); margin-left:-1px;}
+        .style-classic .c-dot { display: none; }
+
+        /* Style 2: Precision (Green) */
+        .style-precision .c-circle { display: none; }
+        .style-precision .c-line-h { top: 50%; left: -100px; right: -100px; height: 1px; background: #10b981; margin-top:0;}
+        .style-precision .c-line-v { left: 50%; top: -100px; bottom: -100px; width: 1px; background: #10b981; margin-left:0;}
+        .style-precision .c-dot { width: 4px; height: 4px; background: #10b981; border-radius: 50%; top: 50%; left: 50%; margin-top:-2px; margin-left:-2px; display: block;}
+
+        /* Style 3: Simple (White with shadow) */
+        .style-simple .c-circle { display: none; }
+        .style-simple .c-line-h { top: 50%; left: -30px; right: -30px; height: 2px; background: #fff; box-shadow: 0 0 3px #000; margin-top:-1px;}
+        .style-simple .c-line-v { left: 50%; top: -30px; bottom: -30px; width: 2px; background: #fff; box-shadow: 0 0 3px #000; margin-left:-1px;}
+        .style-simple .c-dot { display: none; }
+
+        /* Style 4: Sniper (Cyan) */
+        .style-sniper .c-circle { width: 60%; height: 60%; border: 2px dashed #0ea5e9; border-radius: 50%; top: 20%; left: 20%;}
+        .style-sniper .c-line-h { top: 50%; left: -10px; right: -10px; height: 1px; background: #0ea5e9; margin-top:0;}
+        .style-sniper .c-line-v { left: 50%; top: -10px; bottom: -10px; width: 1px; background: #0ea5e9; margin-left:0;}
+        .style-sniper .c-dot { width: 6px; height: 6px; border: 1px solid #0ea5e9; border-radius: 50%; top: 50%; left: 50%; margin-top:-3px; margin-left:-3px; display: block; background: transparent;}
+
+        /* General Buttons */
+        .btn-primary { background: #3b82f6; color: white; font-weight: 600; padding: 10px 18px; }
+        .btn-primary:hover { background: #2563eb; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); }
+        .btn-secondary { background: #f1f5f9; color: #475569; padding: 10px 18px; font-weight: 600; border: 1px solid #e2e8f0; }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .btn-success { background: #10b981; color: white; padding: 10px 18px; font-weight: 600; }
+        .btn-success:hover { background: #059669; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3); }
+
+        /* Tables & Inputs */
+        input[type="number"] { width: 75px; padding: 8px; margin: 2px 4px; text-align: center; border: 1px solid #cbd5e1; border-radius: 6px; font-family: monospace; font-size: 14px; outline: none; transition: border 0.2s;}
+        input[type="number"]:focus { border-color: #3b82f6; }
+        .macro-inputs .tool-row { margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; padding: 8px; background: #f8fafc; border-radius: 8px; border: 1px solid #f1f5f9; }
+
+        .results-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 10px; font-size: 14px; border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; }
+        .results-table th, .results-table td { padding: 12px 10px; text-align: center; vertical-align: middle; border-bottom: 1px solid #e2e8f0; }
+        .results-table th { background-color: #f8fafc; font-weight: 700; color: #475569; }
+        .results-table tr:last-child td { border-bottom: none; }
+        .results-table td.result-val { font-weight: 700; color: #3b82f6; font-family: monospace; font-size: 15px; }
+        
+        .btn-copy { background: #3b82f6; color: white; padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 12px; margin: 0; }
+        .btn-copy:hover { background: #2563eb; }
+
+        /* UI History Panel */
+        .history-card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; margin-top: 15px; border-radius: 8px; text-align: left; }
+        .history-card .timestamp { font-size: 12px; color: #64748b; font-weight: 700; margin-bottom: 10px; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+        .history-table { width: 100%; border-collapse: collapse; font-size: 13px; font-family: monospace;}
+        .history-table th, .history-table td { padding: 4px; text-align: center; }
+        .history-table th { color: #94a3b8; font-family: "Montserrat", sans-serif; font-size: 11px; text-transform: uppercase; }
+        
+        /* Step Box */
+        #textBox { font-size: 15px; border: 2px dashed #cbd5e1; min-height: 80px; margin: 0 0 20px 0; padding: 20px; background: #f8fafc; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #334155; line-height: 1.5; text-align: left; }
+        
+        /* Toolbar */
+        .video-toolbar { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); width: 650px; margin-left: auto; margin-right: auto; box-sizing: border-box; }
+        .toolbar-group { display: flex; align-items: center; gap: 10px; }
+        .toolbar-divider { width: 2px; height: 30px; background: #e2e8f0; }
+        .toolbar-label { font-weight: 700; color: #475569; font-size: 13px; text-transform: uppercase; }
+        .toolbar-select { padding: 6px; border-radius: 6px; border: 1px solid #cbd5e1; font-family: inherit; font-size: 13px; outline: none; cursor: pointer; }
+
+        /* Popup */
+        .moonraker-popup { display: none; background: #0f172a; padding: 20px; font-size: 13px; color: #cbd5e1; text-align: left; }
+        .moonraker-popup code { background: #1e293b; padding: 2px 6px; border-radius: 4px; color: #38bdf8; font-family: monospace; }
+        .moonraker-popup pre { margin: 8px 0 0 0; background: #1e293b; padding: 10px; border-radius: 6px; color: #a78bfa; font-family: monospace; font-size: 12px; border-left: 3px solid #3b82f6;}
+    </style>
+</head>
+<body>
+
+    <h1>Mata</h1>
+    <h3>Nozzle Offset Calibration Tool</h3>
+    
+    <div class="setup-panel">
+        <div class="setup-row">
+            <label for="connType">Connection:</label>
+            <select id="connType" onchange="toggleConnectionType()">
+                <option value="network">Network (IP)</option>
+                <option value="local">Local PC (USB)</option>
+            </select>
+            
+            <label for="toolCount">Tools:</label>
+            <select id="toolCount" onchange="buildInterface()">
+                <option value="2">2 (T0-T1)</option>
+                <option value="3">3 (T0-T2)</option>
+                <option value="4">4 (T0-T3)</option>
+                <option value="5">5 (T0-T4)</option>
+                <option value="6">6 (T0-T5)</option>
+                <option value="7">7 (T0-T6)</option>
+                <option value="8" selected>8 (T0-T7)</option>
+            </select>
+        </div>
+
+        <div id="networkSetup" class="setup-row" style="margin-top: 10px;">
+            <label for="ipAddress">Cam IP:</label>
+            <input type="text" id="ipAddress" placeholder="192.168.1.50">
+            
+            <label for="camSelect">Source:</label>
+            <select id="camSelect" onchange="updateNetworkCamera()">
+                <option value="1">Cam 1</option>
+                <option value="2">Cam 2</option>
+                <option value="3">Cam 3</option>
+                <option value="4">Cam 4</option>
+            </select>
+            <button class="btn-primary" onClick="updateNetworkCamera()" style="margin-left: 10px;">Connect Cam</button>
+        </div>
+
+        <div id="localSetup" class="setup-row" style="display: none; margin-top: 10px;">
+            <label for="localCamSelect">USB Camera:</label>
+            <select id="localCamSelect" onchange="startLocalCamera()"></select>
+            <button onClick="loadLocalCameras()" class="btn-primary" style="margin-left: 10px;">Refresh Cams</button>
+        </div>
+
+        <div id="camStatus" style="color: #94a3b8; margin-top: 10px; font-weight: 600; font-size: 14px;">Waiting for connection...</div>
+    </div>
+
+    <div id="videoContainer">
+        <img id="videoStreamImg" class="stream-element" crossorigin="anonymous">
+        <video id="videoStreamVid" class="stream-element" autoplay playsinline style="display: none;"></video>
+        
+        <div id="crosshairOverlay" class="style-classic">
+            <div class="cross-part c-circle"></div>
+            <div class="cross-part c-line-h"></div>
+            <div class="cross-part c-line-v"></div>
+            <div class="cross-part c-dot"></div>
+        </div>
+    </div>
+
+    <div class="video-toolbar">
+        <div class="toolbar-group">
+            <button class="btn-secondary" style="padding: 6px 12px; font-size:12px;" onClick="zoomIn()">Zoom +</button> 
+            <button class="btn-secondary" style="padding: 6px 12px; font-size:12px;" onClick="zoomOut()">Zoom -</button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-group">
+            <label class="toolbar-label">Brightness:</label> 
+            <input oninput="exposureHandler()" id="exposureSlider" type="range" min="0" max="20" value="10" style="width: 80px;">
+        </div>
+
+        <div class="toolbar-divider"></div>
+
+        <div class="toolbar-group">
+            <label class="toolbar-label">Crosshair:</label> 
+            <select id="crosshairSelect" class="toolbar-select" onchange="changeCrosshair()">
+                <option value="style-classic">Classic (Red)</option>
+                <option value="style-precision">Precision (Green)</option>
+                <option value="style-simple">Simple (White)</option>
+                <option value="style-sniper">Sniper (Cyan)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="ui-panel">
+        <div class="ui-panel-title">Calibration Wizard</div>
+        
+        <p id="textBox">Tip: Open your Klipper Dashboard (Fluidd/Mainsail) on the other half of your screen to control the printer.</p>
+
+        <div style="margin-bottom: 25px; text-align: center;">
+            <button id="startButton" class="btn-primary" onClick="startHandler()">Start Step-by-Step Guide</button>
+            <button id="backButton" class="btn-secondary" style="margin: 0 10px;" onClick="backHandler()" disabled>Back</button>
+            <button id="resetButton" class="btn-secondary" onClick="resetHandler()" disabled>Reset Guide</button>
+        </div>
+
+        <div class="ui-panel-title" style="font-size: 14px; margin-bottom: 10px; border:none;">Absolute Positions</div>
+        
+        <form id="calcForm" class="macro-inputs"></form>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+        
+        <div class="ui-panel-title" style="font-size: 16px; border:none;">Calculated Offsets (Tx - T0)</div>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>X Offset</th>
+                    <th>Y Offset</th>
+                    <th>Z Offset</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody"></tbody>
+        </table>
+        
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+            <button class="btn-success" style="flex: 1; padding: 12px; font-size: 15px;" onClick="saveToHistory()">Save to History</button>
+            
+            <div style="position: relative; flex: 1; display: flex;">
+                <button class="btn-primary" style="flex: 1; padding: 12px; font-size: 15px; border-radius: 6px 0 0 6px;" onClick="downloadCfg()">Download mata_offsets.cfg</button>
+                <button class="btn-secondary" style="padding: 0 15px; border-radius: 0 6px 6px 0; font-size: 18px; color: #3b82f6; border: 1px solid #3b82f6; border-left: none;" onClick="toggleCfgInfo()" title="How to use .cfg">ℹ</button>
+                
+                <div id="cfgInfoPopup" class="moonraker-popup" style="position: absolute; bottom: 100%; right: 0; width: 580px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 200; padding: 20px;">
+                    <div style="font-weight: 800; font-size: 15px; margin-bottom: 12px; color: white;">✅ How to integrate Mata Offsets</div>
+                    
+                    <p style="margin: 8px 0 12px 0; color: #cbd5e1;">1. Download <code>mata_offsets.cfg</code> and place it in your Klipper config folder.<br>
+                    Add the following line to your <code>printer.cfg</code>:</p>
+                    <pre style="background:#1e293b; padding:10px; border-radius:6px; color:#67e8f9; font-size:13px;">[include mata_offsets.cfg]</pre>
+
+                    <p style="margin: 15px 0 8px 0; color: #cbd5e1;"><strong>2. Edit each <code>tool_x.cfg</code> file:</strong></p>
+                    
+                    <p style="margin: 6px 0; color:#94a3b8;">Replace the following block inside <strong>[gcode_macro _Variables_tX]</strong>:</p>
+                    
+                    <pre style="background:#1e293b; padding:10px; border-radius:6px; color:#f87171; font-size:13px; margin-bottom:8px;">variable_xoffset: 0
+variable_yoffset: 0
+variable_zoffset: 0</pre>
+
+                    <p style="margin: 8px 0 6px 0; color:#94a3b8;">with this (depending on tool number):</p>
+
+                    <table style="width:100%; border-collapse:collapse; font-size:13px; background:#1e293b; border-radius:6px; overflow:hidden;">
+                        <tr style="background:#334155;"><th style="padding:8px; text-align:left; color:white;">Tool</th><th style="padding:8px; text-align:left; color:white;">Code to insert</th></tr>
+                        <tr><td style="padding:8px; color:#a5b4fc;">T0</td><td style="padding:8px; color:#67e8f9; font-family:monospace;">variable_xoffset: 0<br>variable_yoffset: 0<br>variable_zoffset: 0</td></tr>
+                        <tr><td style="padding:8px; color:#a5b4fc;">T1</td><td style="padding:8px; color:#67e8f9; font-family:monospace;">variable_xoffset: {printer["gcode_macro mata_offsets"].t1_x | float}<br>variable_yoffset: {printer["gcode_macro mata_offsets"].t1_y | float}<br>variable_zoffset: {printer["gcode_macro mata_offsets"].t1_z | float}</td></tr>
+                        <tr><td style="padding:8px; color:#a5b4fc;">T2</td><td style="padding:8px; color:#67e8f9; font-family:monospace;">variable_xoffset: {printer["gcode_macro mata_offsets"].t2_x | float}<br>variable_yoffset: {printer["gcode_macro mata_offsets"].t2_y | float}<br>variable_zoffset: {printer["gcode_macro mata_offsets"].t2_z | float}</td></tr>
+                        <tr><td style="padding:8px; color:#a5b4fc;">T3</td><td style="padding:8px; color:#67e8f9; font-family:monospace;">variable_xoffset: {printer["gcode_macro mata_offsets"].t3_x | float}<br>variable_yoffset: {printer["gcode_macro mata_offsets"].t3_y | float}<br>variable_zoffset: {printer["gcode_macro mata_offsets"].t3_z | float}</td></tr>
+                    </table>
+
+                    <p style="margin-top: 15px; font-size:13px; color:#94a3b8;">
+                        Repeat for all tools (T1 to T7). <strong>T0 stays at 0.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-panel" style="width: 380px; margin-left: 20px;">
+        <div class="ui-panel-title" style="display: flex; justify-content: space-between; align-items: center;">
+            Saved History
+            <button class="btn-secondary" style="padding: 4px 10px; font-size: 12px; color: #ef4444;" onClick="clearHistory()">Clear</button>
+        </div>
+        <div id="historyList">
+            <p style="color: #94a3b8; font-size: 14px; text-align: center; margin-top: 30px;">No saved offsets yet.</p>
+        </div>
+    </div>
+
+    <script>
+        // (The entire script remains unchanged - all user-facing text in the script is already in English)
+        let localStreamRef = null;
+
+        function changeCrosshair() {
+            var style = document.getElementById("crosshairSelect").value;
+            document.getElementById("crosshairOverlay").className = style;
+            localStorage.setItem("intaiCrosshair", style);
+        }
+
+        function toggleCfgInfo() {
+            var info = document.getElementById("cfgInfoPopup");
+            info.style.display = (info.style.display === "block") ? "none" : "block";
+        }
+
+        function buildInterface() {
+            var count = parseInt(document.getElementById("toolCount").value);
+            localStorage.setItem("klipperToolCount", count);
+
+            var tempVals = {};
+            for(var i=0; i<8; i++) {
+                var elX = document.getElementById("x"+i);
+                if(elX) tempVals[i] = { x: elX.value, y: document.getElementById("y"+i).value, z: document.getElementById("z"+i).value };
+            }
+
+            var formHtml = "";
+            for(var i=0; i<count; i++) {
+                var vx = tempVals[i] ? tempVals[i].x : "";
+                var vy = tempVals[i] ? tempVals[i].y : "";
+                var vz = tempVals[i] ? tempVals[i].z : "";
+                
+                formHtml += `<div class="tool-row">
+                    <span style="width: 40px; display:inline-block; color:#475569; font-size:16px;">T${i}:</span> 
+                    <span style="color:#94a3b8; font-size:12px;">X</span> <input type="number" id="x${i}" step="0.01" value="${vx}" oninput="calculateOffsets()"> 
+                    <span style="color:#94a3b8; font-size:12px;">Y</span> <input type="number" id="y${i}" step="0.01" value="${vy}" oninput="calculateOffsets()"> 
+                    <span style="color:#94a3b8; font-size:12px;">Z</span> <input type="number" id="z${i}" step="0.01" value="${vz}" oninput="calculateOffsets()">
+                    </div>`;
+            }
+            document.getElementById("calcForm").innerHTML = formHtml;
+
+            var tableHtml = "";
+            for(var i=1; i<count; i++) {
+                tableHtml += `
+                    <tr>
+                        <td style="color:#475569; font-weight:bold;">T${i}</td>
+                        <td class="result-val" id="resX${i}">--</td>
+                        <td class="result-val" id="resY${i}">--</td>
+                        <td class="result-val" id="resZ${i}">--</td>
+                        <td><button class="btn-copy" onclick="copyToolOffset(${i}, this)">Copy T${i}</button></td>
+                    </tr>`;
+            }
+            document.getElementById("resultsTableBody").innerHTML = tableHtml;
+
+            calculateOffsets();
+        }
+
+        function calculateOffsets() {
+            var count = parseInt(document.getElementById("toolCount").value);
+            var x0 = document.getElementById("x0").value;
+            var y0 = document.getElementById("y0").value;
+            var z0 = document.getElementById("z0").value;
+
+            for (var i = 1; i < count; i++) {
+                var xi = document.getElementById("x" + i).value;
+                var yi = document.getElementById("y" + i).value;
+                var zi = document.getElementById("z" + i).value;
+
+                document.getElementById("resX" + i).innerText = (x0 !== "" && xi !== "") ? (parseFloat(xi) - parseFloat(x0)).toFixed(2) : "--";
+                document.getElementById("resY" + i).innerText = (y0 !== "" && yi !== "") ? (parseFloat(yi) - parseFloat(y0)).toFixed(2) : "--";
+                document.getElementById("resZ" + i).innerText = (z0 !== "" && zi !== "") ? (parseFloat(zi) - parseFloat(z0)).toFixed(2) : "--";
+            }
+        }
+
+        function downloadCfg() {
+            var count = parseInt(document.getElementById("toolCount").value);
+            var hasData = false;
+            
+            var content = "# Generated by Mata Calibration Tool\n";
+            content += "# " + new Date().toLocaleString() + "\n";
+            content += "# 1. Add [include mata_offsets.cfg] to your printer.cfg\n";
+            content += "# 2. Replace the offset values in your tool_x.cfg files (see Info button)\n\n";
+            
+            content += "[gcode_macro mata_offsets]\n";
+            content += "description: Database for toolchanger offsets\n";
+
+            for(var i=1; i<count; i++) {
+                var rx = document.getElementById("resX"+i).innerText;
+                var ry = document.getElementById("resY"+i).innerText;
+                var rz = document.getElementById("resZ"+i).innerText;
+                
+                if (rx !== "--" && ry !== "--" && rz !== "--") {
+                    hasData = true;
+                    content += `variable_t${i}_x: ${rx}\n`;
+                    content += `variable_t${i}_y: ${ry}\n`;
+                    content += `variable_t${i}_z: ${rz}\n`;
+                }
+            }
+            
+            content += "gcode:\n";
+            content += "    # This macro only stores variables.\n";
+
+            if(!hasData) {
+                alert("No calculated offsets to download! Please calculate at least one offset first.");
+                return;
+            }
+
+            var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = "mata_offsets.cfg";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function copyToolOffset(toolId, btnElement) {
+            var rx = document.getElementById("resX" + toolId).innerText;
+            var ry = document.getElementById("resY" + toolId).innerText;
+            var rz = document.getElementById("resZ" + toolId).innerText;
+
+            if (rx === "--" && ry === "--" && rz === "--") {
+                alert("No data to copy for T" + toolId + "!");
+                return;
+            }
+
+            var output = `#T${toolId} Offsets\n`;
+            output += `variable_xoffset: ${rx !== "--" ? rx : "0.00"}\n`;
+            output += `variable_yoffset: ${ry !== "--" ? ry : "0.00"}\n`;
+            output += `variable_zoffset: ${rz !== "--" ? rz : "0.00"}\n`;
+
+            navigator.clipboard.writeText(output).then(function() {
+                var originalText = btnElement.innerText;
+                var originalBg = btnElement.style.background;
+                btnElement.innerText = "Copied!";
+                btnElement.style.background = "#10b981";
+                setTimeout(function() { btnElement.innerText = originalText; btnElement.style.background = originalBg; }, 2000);
+            });
+        }
+
+        function toggleConnectionType() {
+            var type = document.getElementById("connType").value;
+            localStorage.setItem("klipperConnType", type);
+            
+            if (type === "network") {
+                document.getElementById("networkSetup").style.display = "flex";
+                document.getElementById("localSetup").style.display = "none";
+                document.getElementById("videoStreamVid").style.display = "none";
+                document.getElementById("videoStreamImg").style.display = "block";
+                
+                if(localStreamRef) { localStreamRef.getTracks().forEach(track => track.stop()); localStreamRef = null; }
+                updateNetworkCamera();
+            } else {
+                document.getElementById("networkSetup").style.display = "none";
+                document.getElementById("localSetup").style.display = "flex";
+                document.getElementById("videoStreamImg").style.display = "none";
+                document.getElementById("videoStreamVid").style.display = "block";
+                
+                document.getElementById("videoStreamImg").src = ""; 
+                loadLocalCameras();
+            }
+            resetZoomAndExposure();
+        }
+
+        function updateNetworkCamera() {
+            var ip = document.getElementById("ipAddress").value.trim().replace(/^https?:\/\//, '').split('/')[0];
+            document.getElementById("ipAddress").value = ip;
+            if(ip === "") return;
+
+            var camId = parseInt(document.getElementById("camSelect").value);
+            localStorage.setItem('klipperCamIP', ip);
+            localStorage.setItem('klipperCamIndex', camId);
+            
+            var proxyPath = (camId === 1) ? "/webcam/" : "/webcam" + camId + "/";
+            var directPort = 8080 + (camId - 1); 
+            var img = document.getElementById("videoStreamImg");
+            
+            img.onload = function() { document.getElementById("camStatus").innerHTML = "<span style='color:#10b981'>Connected!</span>"; };
+            img.onerror = function() { img.onerror = null; img.src = "http://" + ip + ":" + directPort + "/?action=stream"; };
+            img.src = "http://" + ip + proxyPath + "?action=stream";
+        }
+
+        async function loadLocalCameras() {
+            try {
+                await navigator.mediaDevices.getUserMedia({video: true});
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const videoDevices = devices.filter(device => device.kind === 'videoinput');
+                const camSelect = document.getElementById("localCamSelect");
+                camSelect.innerHTML = ""; 
+                
+                videoDevices.forEach((device, index) => {
+                    let option = document.createElement("option");
+                    option.value = device.deviceId;
+                    option.text = device.label || `Camera ${index + 1}`;
+                    camSelect.appendChild(option);
+                });
+                startLocalCamera(); 
+            } catch (err) { console.error("Local camera error", err); }
+        }
+
+        async function startLocalCamera() {
+            var deviceId = document.getElementById("localCamSelect").value;
+            var videoEl = document.getElementById("videoStreamVid");
+            if (localStreamRef) localStreamRef.getTracks().forEach(track => track.stop());
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { deviceId: deviceId ? { exact: deviceId } : undefined, width: { ideal: 1920 }, height: { ideal: 1080 } } });
+                localStreamRef = stream;
+                videoEl.srcObject = stream;
+                document.getElementById("camStatus").innerHTML = "<span style='color:#10b981'>USB Camera connected!</span>";
+            } catch(e) { console.error(e); }
+        }
+
+        window.onload = function() {
+            var savedConnType = localStorage.getItem('klipperConnType');
+            var savedIP = localStorage.getItem('klipperCamIP');
+            var savedCam = localStorage.getItem('klipperCamIndex');
+            var savedTools = localStorage.getItem('klipperToolCount');
+            var savedCrosshair = localStorage.getItem('intaiCrosshair');
+            
+            if (savedConnType) document.getElementById("connType").value = savedConnType;
+            if (savedCam) document.getElementById("camSelect").value = savedCam;
+            if (savedTools) document.getElementById("toolCount").value = savedTools;
+            if (savedIP) document.getElementById("ipAddress").value = savedIP; 
+            
+            if (savedCrosshair) {
+                document.getElementById("crosshairSelect").value = savedCrosshair;
+                changeCrosshair();
+            }
+            
+            buildInterface();
+            toggleConnectionType();
+            renderHistory();
+        };
+
+        var currentZoomValue = 1;
+        function resetZoomAndExposure() { currentZoomValue = 1; applyStreamStyle(); }
+        function zoomIn() { if (currentZoomValue < 5) { currentZoomValue += 0.5; applyStreamStyle(); } }
+        function zoomOut() { if (currentZoomValue > 1) { currentZoomValue -= 0.5; applyStreamStyle(); } }
+        function exposureHandler() { applyStreamStyle(); }
+
+        function applyStreamStyle() {
+            var filterVal = "brightness(" + (document.getElementById("exposureSlider").value / 10.0) + ")";
+            var transformVal = "scale(" + currentZoomValue + ")";
+            var elements = document.querySelectorAll('.stream-element');
+            elements.forEach(el => { el.style.transform = transformVal; el.style.filter = filterVal; });
+        }
+
+        function saveToHistory() {
+            var count = parseInt(document.getElementById("toolCount").value);
+            var entry = { timestamp: new Date().toLocaleString(), tools: {} };
+            var hasData = false;
+
+            for(var i = 1; i < count; i++) {
+                var rx = document.getElementById("resX" + i).innerText;
+                var ry = document.getElementById("resY" + i).innerText;
+                var rz = document.getElementById("resZ" + i).innerText;
+
+                if(rx !== "--" || ry !== "--" || rz !== "--") {
+                    entry.tools["T" + i] = { x: rx, y: ry, z: rz };
+                    hasData = true;
+                }
+            }
+
+            if(!hasData) { alert("No calculated offsets to save."); return; }
+            var history = JSON.parse(localStorage.getItem("klipperCalHistory") || "[]");
+            history.unshift(entry); 
+            if(history.length > 10) history.pop(); 
+            localStorage.setItem("klipperCalHistory", JSON.stringify(history));
+            renderHistory();
+        }
+
+        function renderHistory() {
+            var history = JSON.parse(localStorage.getItem("klipperCalHistory") || "[]");
+            var container = document.getElementById("historyList");
+            if(history.length === 0) { container.innerHTML = "<p style='color:#94a3b8; font-size: 14px; text-align:center; margin-top:30px;'>No saved offsets yet.</p>"; return; }
+            
+            var html = "";
+            history.forEach(function(item) {
+                html += "<div class='history-card'><span class='timestamp'>" + item.timestamp + "</span>";
+                html += "<table class='history-table'><tr><th>Tool</th><th>X</th><th>Y</th><th>Z</th></tr>";
+                for(var t in item.tools) { html += "<tr><td>" + t + "</td><td>" + item.tools[t].x + "</td><td>" + item.tools[t].y + "</td><td>" + item.tools[t].z + "</td></tr>"; }
+                html += "</table></div>";
+            });
+            container.innerHTML = html;
+        }
+
+        function clearHistory() { if(confirm("Clear history?")) { localStorage.removeItem("klipperCalHistory"); renderHistory(); } }
+
+        var currentState = 0;
+
+        function startHandler() {
+            if (currentState === 0) { 
+                document.getElementById("backButton").disabled = false; 
+                document.getElementById("resetButton").disabled = false; 
+                document.getElementById("startButton").innerHTML = "Next Step"; 
+            }
+            currentState++; 
+            stateHandler();
+        }
+
+        function backHandler() { if(currentState > 0) { currentState--; stateHandler(); } }
+        function resetHandler() { location.reload(); }
+
+        function stateHandler() {
+            var box = document.getElementById("textBox");
+            var steps = [
+                "Ready to start. Open your Fluidd/Mainsail dashboard on another screen to jog the printer.",
+                "<strong>Step 1.</strong> Home your printer and perform Z tilt adjust or quad gantry level.",
+                "<strong>Step 2.</strong> Place Intai on the bed. Raise Z height slightly above the camera lens.",
+                "<strong>Step 3.</strong> Using T0, move the tool manually until the nozzle orifice is centered on the crosshair.",
+                "<strong>Step 4.</strong> Record the X and Y position for T0. You can use 'Get Pos' if connected via IP.",
+                "<strong>Step 5.</strong> Drop off T0 and pick up the next tool.",
+                "<strong>Step 6.</strong> Move T1 manually until the nozzle orifice is centered on the crosshair.",
+                "<strong>Step 7.</strong> Record the X and Y position for T1.",
+                "<strong>Step 8.</strong> Repeat for all remaining tools.",
+                "<strong>Step 9.</strong> Use the Copy buttons in the Calculated Offsets section to paste into your config files.",
+                "<strong>Step 10.</strong> Save, restart Klipper and close Mata. Proceed with Intai Z calibration for nozzle Z offsets."
+            ];
+            
+            if(currentState >= 10) {
+                box.innerHTML = steps[10];
+                document.getElementById("startButton").disabled = true;
+            } else {
+                box.innerHTML = steps[currentState];
+            }
+        }
+    </script>
+</body>
+</html>
