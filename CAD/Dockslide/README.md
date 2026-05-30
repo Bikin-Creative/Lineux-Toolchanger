@@ -9,4 +9,4 @@ You can get the bom [Here](https://github.com/Bikin-Creative/Lineux-Toolchanger/
 Pls do not hesitate to ask any questions regarding the Dockslide on our discord channel.
 
 
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_voron_350.png)![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_vzbot330.png)
+![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_voron_350.png)![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_vzbot330.png)![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_sling.png)
