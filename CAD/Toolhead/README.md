@@ -1,27 +1,12 @@
 # Toolheads
 
-Currently, these toolheads are supported by Lineux using the provided files.<br/>
-The included image specifications below may help you estimate how many toolheads can be installed on your printer.<br/>
-Our recommended toolhead currently is Tiga. For toolheads other than those created by us, some parts may require modification to ensure compatibility with Lineux and we are not responsible if things didn't turn out the way you want/expect them to be. The cad included is with a Micro Sherpa extruder to be used as an example for the modifications. Use them at yr own risk !!! Pls check with our Discord before committing to any print.<br/>
+Currently, Tiga Toolhead is our latest toolhead supported by Lineux.<br/>
+The image specifications below may help you estimate how many toolheads can be installed on your printer.<br/>
+There are some toolheads which have been modded to be compatible with Lineux Stealth. You can file their step files in the archive folder.<br/>
 
-# Anthead
-Special thanks to hartk1213<br/>
-[Project Source](https://github.com/PrintersForAnts/AntHead)<br/>
 
-# Dragonburner
-Special thanks to chirpy2605<br/>
-[Project Source](https://github.com/chirpy2605/voron/tree/main/V0/Dragon_Burner)<br/>
-
-# Eva
-Special thanks to Paweł Kucmus<br/>
-[Project Source](https://main.eva-3d.page/)<br/>
-<br/><br/>
 
 ![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/lineux_tiga.png)
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/r2t.png)
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/anthead.png)
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/dragonburner.png)
-![](https://github.com/Bikin-Creative/Lineux-Toolchanger/blob/main/Images/eva.png)
 
 
 
