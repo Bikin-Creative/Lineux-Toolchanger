@@ -36,6 +36,7 @@ AAA Battery Terminal 10x9mm (additional 2)
 
 
 Toolhead<br/>
+m2 x 8mm self-tap screw (additional 2)<br/>
 m3x5x4 brass insert (additional 10)<br/>
 m3 x 6mm bhcs (additional 4)<br/>
 m3 x 8mm bhcs (2 instead of 4)<br/>
